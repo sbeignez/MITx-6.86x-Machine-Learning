@@ -1,0 +1,704 @@
+0
+00:00:00,000 --> 00:00:01,110
+
+
+1
+00:00:01,110 --> 00:00:02,029
+OK.
+
+2
+00:00:02,029 --> 00:00:06,140
+So now, our regularization goal here
+
+3
+00:00:06,140 --> 00:00:13,430
+is to maximize the distance that the margin boundaries are
+
+4
+00:00:13,430 --> 00:00:15,180
+from the decision boundaries.
+
+5
+00:00:15,180 --> 00:00:22,070
+This will be our regularization type, OK?
+
+6
+00:00:22,070 --> 00:00:28,340
+Now, we can proceed to define the objective function itself
+
+7
+00:00:28,340 --> 00:00:33,500
+for finding large margin decision boundaries.
+
+8
+00:00:33,500 --> 00:00:36,950
+It has two components, as we've already seen.
+
+9
+00:00:36,950 --> 00:00:38,150
+It has a loss.
+
+10
+00:00:38,150 --> 00:00:40,410
+And it has a regularization.
+
+11
+00:00:40,410 --> 00:00:42,170
+We have talked about both.
+
+12
+00:00:42,170 --> 00:00:47,720
+So let's quantify, now, what that loss actually is.
+
+13
+00:00:47,720 --> 00:00:50,810
+We know that the linear prediction here, the sine of
+
+14
+00:00:50,810 --> 00:00:54,120
+ed relates to how the example is classified.
+
+15
+00:00:54,120 --> 00:00:58,280
+If we multiply that with the corresponding label,
+
+16
+00:00:58,280 --> 00:01:01,820
+we get a positive value when the prediction
+
+17
+00:01:01,820 --> 00:01:05,580
+agrees with the label.
+
+18
+00:01:05,580 --> 00:01:06,170
+OK?
+
+19
+00:01:06,170 --> 00:01:09,440
+So we can call this argument agreement.
+
+20
+00:01:09,440 --> 00:01:12,410
+
+
+21
+00:01:12,410 --> 00:01:16,970
+Let's denote it by z.
+
+22
+00:01:16,970 --> 00:01:21,290
+Now, we also know that if the point lies exactly
+
+23
+00:01:21,290 --> 00:01:25,920
+on the margin boundary, say, for a positively labeled point,
+
+24
+00:01:25,920 --> 00:01:27,920
+the linear prediction is 1.
+
+25
+00:01:27,920 --> 00:01:31,250
+The label is 1.
+
+26
+00:01:31,250 --> 00:01:35,630
+And agreement values exactly 1.
+
+27
+00:01:35,630 --> 00:01:40,010
+If it lies on the correct side of the margin boundary
+
+28
+00:01:40,010 --> 00:01:41,870
+but beyond the margin boundaries,
+
+29
+00:01:41,870 --> 00:01:44,300
+then the value of z, the agreement,
+
+30
+00:01:44,300 --> 00:01:46,540
+will be greater than 1.
+
+31
+00:01:46,540 --> 00:01:50,720
+So we can now define the laws of how much this preference
+
+32
+00:01:50,720 --> 00:01:53,120
+to keep the points outside the margin boundaries
+
+33
+00:01:53,120 --> 00:01:59,600
+is violated by saying that the loss is 0 if the agreement is
+
+34
+00:01:59,600 --> 00:02:03,920
+greater than equal to 1 and then start
+
+35
+00:02:03,920 --> 00:02:07,130
+penalizing, giving our last values
+
+36
+00:02:07,130 --> 00:02:14,210
+for any example that penetrates into the margin boundaries.
+
+37
+00:02:14,210 --> 00:02:16,820
+For hinge loss, this penalty is 1
+
+38
+00:02:16,820 --> 00:02:24,260
+minus z if z here is less than 1.
+
+39
+00:02:24,260 --> 00:02:26,830
+So this will be a positive value that increases.
+
+40
+00:02:26,830 --> 00:02:30,850
+As z decreases, the agreement decreases below 1.
+
+41
+00:02:30,850 --> 00:02:34,050
+
+
+42
+00:02:34,050 --> 00:02:36,960
+Now, the regularization-- we've already
+
+43
+00:02:36,960 --> 00:02:41,340
+seen that we wish to maximize fine values of theta and theta
+
+44
+00:02:41,340 --> 00:02:49,110
+0 that increase when the norm of parameter vector of theta,
+
+45
+00:02:49,110 --> 00:02:51,510
+because that is exactly the distance
+
+46
+00:02:51,510 --> 00:02:56,550
+that the margin boundaries lie around the decision boundary.
+
+47
+00:02:56,550 --> 00:02:59,610
+Maximizing that is the same as trying
+
+48
+00:02:59,610 --> 00:03:07,890
+to minimize the norm of theta--
+
+49
+00:03:07,890 --> 00:03:11,350
+the same as minimizing the squared norm of theta.
+
+50
+00:03:11,350 --> 00:03:14,160
+And we can just for prettiness, multiply that
+
+51
+00:03:14,160 --> 00:03:19,670
+by one half, which will become clear later why we do that.
+
+52
+00:03:19,670 --> 00:03:20,880
+All right?
+
+53
+00:03:20,880 --> 00:03:23,490
+So we can regularize the solutions
+
+54
+00:03:23,490 --> 00:03:32,160
+by trying to penalize large values of the norm of parameter
+
+55
+00:03:32,160 --> 00:03:34,840
+vector theta-squared.
+
+56
+00:03:34,840 --> 00:03:37,080
+So now, we have an objective function
+
+57
+00:03:37,080 --> 00:03:39,870
+that guides our selection of parameter vector
+
+58
+00:03:39,870 --> 00:03:41,820
+theta and theta 0.
+
+59
+00:03:41,820 --> 00:03:44,370
+That objective function has the two part.
+
+60
+00:03:44,370 --> 00:03:51,270
+It has an average loss where each loss term measures
+
+61
+00:03:51,270 --> 00:03:59,250
+how much that example violates their margin boundary defined
+
+62
+00:03:59,250 --> 00:04:02,580
+according to the hinge loss that we just discussed.
+
+63
+00:04:02,580 --> 00:04:06,690
+The other term is the regularization term
+
+64
+00:04:06,690 --> 00:04:09,450
+that tries to push the margin boundaries further and further
+
+65
+00:04:09,450 --> 00:04:11,810
+apart.
+
+66
+00:04:11,810 --> 00:04:16,350
+Now, our objective function how we wish to guide the solution
+
+67
+00:04:16,350 --> 00:04:18,600
+is a balance between the two.
+
+68
+00:04:18,600 --> 00:04:23,610
+And we set the balance by defining a new parameter called
+
+69
+00:04:23,610 --> 00:04:29,340
+regularization parameter that simply
+
+70
+00:04:29,340 --> 00:04:35,520
+weighs how these two terms should affect our solution.
+
+71
+00:04:35,520 --> 00:04:40,510
+Regularization parameter here is always greater than 0.
+
+72
+00:04:40,510 --> 00:04:41,110
+OK?
+
+73
+00:04:41,110 --> 00:04:43,380
+For large values of lambda--
+
+74
+00:04:43,380 --> 00:04:47,580
+the regularization parameter-- we will favor large margin
+
+75
+00:04:47,580 --> 00:04:51,660
+solutions but potentially at a cost of incurring
+
+76
+00:04:51,660 --> 00:04:56,400
+some further loss as the margin boundaries push
+
+77
+00:04:56,400 --> 00:04:59,040
+past the examples.
+
+78
+00:04:59,040 --> 00:05:03,000
+If the regularization parameter is very small,
+
+79
+00:05:03,000 --> 00:05:07,290
+we favor, really, correctly putting the examples
+
+80
+00:05:07,290 --> 00:05:10,310
+outside the margin boundaries potentially
+
+81
+00:05:10,310 --> 00:05:14,460
+at a cost of keeping the margin boundary as closer
+
+82
+00:05:14,460 --> 00:05:16,470
+to the decision boundary.
+
+83
+00:05:16,470 --> 00:05:19,890
+Optimal value of theta and theta 0
+
+84
+00:05:19,890 --> 00:05:23,410
+is obtained by minimizing this objective function.
+
+85
+00:05:23,410 --> 00:05:25,800
+So we have turned the learning problem
+
+86
+00:05:25,800 --> 00:05:27,969
+into an optimization problem.
+
+87
+00:05:27,969 --> 00:05:32,460
+
+
+88
+00:05:32,460 --> 00:05:34,580
+Let's look at now how we can illustrate
+
+89
+00:05:34,580 --> 00:05:38,930
+how the objective function guides the selection of theta
+
+90
+00:05:38,930 --> 00:05:40,310
+and theta 0.
+
+91
+00:05:40,310 --> 00:05:44,090
+Ideally, we would change the values of theta and theta 0,
+
+92
+00:05:44,090 --> 00:05:47,660
+draw a different decision boundary and adjoining margin
+
+93
+00:05:47,660 --> 00:05:50,660
+boundaries and evaluate the objective function
+
+94
+00:05:50,660 --> 00:05:54,860
+and then seeing how the minimum of the objective function
+
+95
+00:05:54,860 --> 00:06:00,050
+is guided by the points, as well as the regularization
+
+96
+00:06:00,050 --> 00:06:01,250
+parameter.
+
+97
+00:06:01,250 --> 00:06:03,440
+To make this illustration easier,
+
+98
+00:06:03,440 --> 00:06:08,810
+I'm going to instead introduce additional points here and just
+
+99
+00:06:08,810 --> 00:06:12,920
+evaluate what the loss is that the objective function would
+
+100
+00:06:12,920 --> 00:06:14,660
+assign to those points.
+
+101
+00:06:14,660 --> 00:06:17,520
+
+
+102
+00:06:17,520 --> 00:06:21,380
+So here, we have a point that lies exactly
+
+103
+00:06:21,380 --> 00:06:23,270
+on the margin boundary.
+
+104
+00:06:23,270 --> 00:06:30,680
+We know then how to evaluate the hinge loss of such a point.
+
+105
+00:06:30,680 --> 00:06:32,300
+It's positively labeled.
+
+106
+00:06:32,300 --> 00:06:36,200
+Their value of their linear function is exactly 1.
+
+107
+00:06:36,200 --> 00:06:39,800
+So the agreement here is 1 times 1 or 1.
+
+108
+00:06:39,800 --> 00:06:43,100
+And the corresponding hinge loss is exactly 0.
+
+109
+00:06:43,100 --> 00:06:47,120
+So the points on the margin boundary
+
+110
+00:06:47,120 --> 00:06:49,940
+and on the correct points that are on the correct side
+
+111
+00:06:49,940 --> 00:06:55,510
+and beyond margin boundaries incurred no loss at all.
+
+112
+00:06:55,510 --> 00:07:00,690
+Points that now go into the margin boundaries
+
+113
+00:07:00,690 --> 00:07:02,295
+do start incurring loss.
+
+114
+00:07:02,295 --> 00:07:05,070
+
+
+115
+00:07:05,070 --> 00:07:07,980
+To evaluate what that value is, let's start
+
+116
+00:07:07,980 --> 00:07:13,410
+by evaluating what it would be if the point lied exactly
+
+117
+00:07:13,410 --> 00:07:15,990
+on the decision boundary.
+
+118
+00:07:15,990 --> 00:07:21,800
+At the decision boundary, the hinge loss
+
+119
+00:07:21,800 --> 00:07:27,580
+is the linear prediction times label as the argument.
+
+120
+00:07:27,580 --> 00:07:29,630
+And in this case, it will be 0.
+
+121
+00:07:29,630 --> 00:07:34,200
+So it will be 1 minus 0 or 1.
+
+122
+00:07:34,200 --> 00:07:35,210
+OK?
+
+123
+00:07:35,210 --> 00:07:39,770
+Now, this loss is a linear function--
+
+124
+00:07:39,770 --> 00:07:44,160
+how much the point violates their margin boundaries.
+
+125
+00:07:44,160 --> 00:07:46,640
+So the value is 0 here.
+
+126
+00:07:46,640 --> 00:07:50,280
+It's 1 as it reaches the design boundary.
+
+127
+00:07:50,280 --> 00:07:56,780
+So at the loss on this point hinge loss for this point
+
+128
+00:07:56,780 --> 00:08:00,990
+is then in between, which is exactly one half.
+
+129
+00:08:00,990 --> 00:08:01,676
+OK?
+
+130
+00:08:01,676 --> 00:08:05,210
+It will be 1, as it reaches the decision boundary
+
+131
+00:08:05,210 --> 00:08:08,860
+and larger beyond.
+
+132
+00:08:08,860 --> 00:08:11,630
+Here, we have a negatively labeled point.
+
+133
+00:08:11,630 --> 00:08:15,560
+We already discussed points that lie exactly
+
+134
+00:08:15,560 --> 00:08:23,900
+on the decision boundary incur hinge loss which is exactly 1.
+
+135
+00:08:23,900 --> 00:08:28,220
+Now, a point that goes beyond the decision
+
+136
+00:08:28,220 --> 00:08:34,730
+boundary to the wrong side under the decision boundary--
+
+137
+00:08:34,730 --> 00:08:40,250
+so this negatively labeled point now lies on the positive margin
+
+138
+00:08:40,250 --> 00:08:41,390
+boundary.
+
+139
+00:08:41,390 --> 00:08:49,250
+So as we move here, it incurs hinge loss 0.
+
+140
+00:08:49,250 --> 00:08:53,260
+Here, the hinge loss is 1.
+
+141
+00:08:53,260 --> 00:08:57,100
+And as we take an equal distance step further
+
+142
+00:08:57,100 --> 00:09:01,030
+in the wrong direction, we get an hinge loss
+
+143
+00:09:01,030 --> 00:09:08,685
+for this point, which is exactly 2.
+
+144
+00:09:08,685 --> 00:09:12,140
+All right, and if we go even further,
+
+145
+00:09:12,140 --> 00:09:14,660
+it will be greater than 2.
+
+146
+00:09:14,660 --> 00:09:19,460
+All right, so now, we have seen how the different points
+
+147
+00:09:19,460 --> 00:09:22,610
+incur loss in the objective function
+
+148
+00:09:22,610 --> 00:09:25,910
+and, thereby, would guide to minimizing
+
+149
+00:09:25,910 --> 00:09:28,910
+values of theta and theta 0.
+
+150
+00:09:28,910 --> 00:09:33,680
+We will talk about the solution more later on in terms
+
+151
+00:09:33,680 --> 00:09:37,130
+of how the solution changes by changing
+
+152
+00:09:37,130 --> 00:09:41,320
+the regularization parameter lambda.
+
+153
+00:09:41,320 --> 00:09:43,540
+So things to know from this lecture
+
+154
+00:09:43,540 --> 00:09:46,210
+is the general point that the learning problems
+
+155
+00:09:46,210 --> 00:09:49,300
+are cast as optimization problems
+
+156
+00:09:49,300 --> 00:09:52,900
+in terms of objective functions that
+
+157
+00:09:52,900 --> 00:09:55,870
+guide the setting of the parameters
+
+158
+00:09:55,870 --> 00:09:58,120
+that we are estimating.
+
+159
+00:09:58,120 --> 00:10:01,100
+The objective functions are decomposed into two parts--
+
+160
+00:10:01,100 --> 00:10:05,770
+average loss over the training examples and the regularization
+
+161
+00:10:05,770 --> 00:10:09,430
+that guides the type of solution that we are after--
+
+162
+00:10:09,430 --> 00:10:13,030
+in our case, how large of a margin
+
+163
+00:10:13,030 --> 00:10:16,570
+we can achieve for the training parts.
+
+164
+00:10:16,570 --> 00:10:20,170
+We talked about large margin linear classification,
+
+165
+00:10:20,170 --> 00:10:25,060
+and how it can be turned into an optimization problem.
+
+166
+00:10:25,060 --> 00:10:28,600
+To this end, we had to define margin boundaries--
+
+167
+00:10:28,600 --> 00:10:32,230
+the distance that they lie from the decision boundary.
+
+168
+00:10:32,230 --> 00:10:35,980
+How this relates to the hinge loss
+
+169
+00:10:35,980 --> 00:10:40,660
+that we defined over the training examples.
+
+170
+00:10:40,660 --> 00:10:44,275
+And how the regularization pushes the margin boundary
+
+171
+00:10:44,275 --> 00:10:46,510
+as it apart.
+
+172
+00:10:46,510 --> 00:10:50,320
+All of this together define, then, the objective
+
+173
+00:10:50,320 --> 00:10:55,630
+function that guides how theta and theta 0 are resolved
+
+174
+00:10:55,630 --> 00:10:58,080
+as the minimizing values.
+
+175
+00:10:58,080 --> 00:10:59,371
+
+

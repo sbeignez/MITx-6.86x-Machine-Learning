@@ -1,0 +1,175 @@
+
+OK.
+So now, our regularization goal here
+is to maximize the distance that the margin boundaries are
+from the decision boundaries.
+This will be our regularization type, OK?
+Now, we can proceed to define the objective function itself
+for finding large margin decision boundaries.
+It has two components, as we've already seen.
+It has a loss.
+And it has a regularization.
+We have talked about both.
+So let's quantify, now, what that loss actually is.
+We know that the linear prediction here, the sine of
+ed relates to how the example is classified.
+If we multiply that with the corresponding label,
+we get a positive value when the prediction
+agrees with the label.
+OK?
+So we can call this argument agreement.
+
+Let's denote it by z.
+Now, we also know that if the point lies exactly
+on the margin boundary, say, for a positively labeled point,
+the linear prediction is 1.
+The label is 1.
+And agreement values exactly 1.
+If it lies on the correct side of the margin boundary
+but beyond the margin boundaries,
+then the value of z, the agreement,
+will be greater than 1.
+So we can now define the laws of how much this preference
+to keep the points outside the margin boundaries
+is violated by saying that the loss is 0 if the agreement is
+greater than equal to 1 and then start
+penalizing, giving our last values
+for any example that penetrates into the margin boundaries.
+For hinge loss, this penalty is 1
+minus z if z here is less than 1.
+So this will be a positive value that increases.
+As z decreases, the agreement decreases below 1.
+
+Now, the regularization-- we've already
+seen that we wish to maximize fine values of theta and theta
+0 that increase when the norm of parameter vector of theta,
+because that is exactly the distance
+that the margin boundaries lie around the decision boundary.
+Maximizing that is the same as trying
+to minimize the norm of theta--
+the same as minimizing the squared norm of theta.
+And we can just for prettiness, multiply that
+by one half, which will become clear later why we do that.
+All right?
+So we can regularize the solutions
+by trying to penalize large values of the norm of parameter
+vector theta-squared.
+So now, we have an objective function
+that guides our selection of parameter vector
+theta and theta 0.
+That objective function has the two part.
+It has an average loss where each loss term measures
+how much that example violates their margin boundary defined
+according to the hinge loss that we just discussed.
+The other term is the regularization term
+that tries to push the margin boundaries further and further
+apart.
+Now, our objective function how we wish to guide the solution
+is a balance between the two.
+And we set the balance by defining a new parameter called
+regularization parameter that simply
+weighs how these two terms should affect our solution.
+Regularization parameter here is always greater than 0.
+OK?
+For large values of lambda--
+the regularization parameter-- we will favor large margin
+solutions but potentially at a cost of incurring
+some further loss as the margin boundaries push
+past the examples.
+If the regularization parameter is very small,
+we favor, really, correctly putting the examples
+outside the margin boundaries potentially
+at a cost of keeping the margin boundary as closer
+to the decision boundary.
+Optimal value of theta and theta 0
+is obtained by minimizing this objective function.
+So we have turned the learning problem
+into an optimization problem.
+
+Let's look at now how we can illustrate
+how the objective function guides the selection of theta
+and theta 0.
+Ideally, we would change the values of theta and theta 0,
+draw a different decision boundary and adjoining margin
+boundaries and evaluate the objective function
+and then seeing how the minimum of the objective function
+is guided by the points, as well as the regularization
+parameter.
+To make this illustration easier,
+I'm going to instead introduce additional points here and just
+evaluate what the loss is that the objective function would
+assign to those points.
+
+So here, we have a point that lies exactly
+on the margin boundary.
+We know then how to evaluate the hinge loss of such a point.
+It's positively labeled.
+Their value of their linear function is exactly 1.
+So the agreement here is 1 times 1 or 1.
+And the corresponding hinge loss is exactly 0.
+So the points on the margin boundary
+and on the correct points that are on the correct side
+and beyond margin boundaries incurred no loss at all.
+Points that now go into the margin boundaries
+do start incurring loss.
+
+To evaluate what that value is, let's start
+by evaluating what it would be if the point lied exactly
+on the decision boundary.
+At the decision boundary, the hinge loss
+is the linear prediction times label as the argument.
+And in this case, it will be 0.
+So it will be 1 minus 0 or 1.
+OK?
+Now, this loss is a linear function--
+how much the point violates their margin boundaries.
+So the value is 0 here.
+It's 1 as it reaches the design boundary.
+So at the loss on this point hinge loss for this point
+is then in between, which is exactly one half.
+OK?
+It will be 1, as it reaches the decision boundary
+and larger beyond.
+Here, we have a negatively labeled point.
+We already discussed points that lie exactly
+on the decision boundary incur hinge loss which is exactly 1.
+Now, a point that goes beyond the decision
+boundary to the wrong side under the decision boundary--
+so this negatively labeled point now lies on the positive margin
+boundary.
+So as we move here, it incurs hinge loss 0.
+Here, the hinge loss is 1.
+And as we take an equal distance step further
+in the wrong direction, we get an hinge loss
+for this point, which is exactly 2.
+All right, and if we go even further,
+it will be greater than 2.
+All right, so now, we have seen how the different points
+incur loss in the objective function
+and, thereby, would guide to minimizing
+values of theta and theta 0.
+We will talk about the solution more later on in terms
+of how the solution changes by changing
+the regularization parameter lambda.
+So things to know from this lecture
+is the general point that the learning problems
+are cast as optimization problems
+in terms of objective functions that
+guide the setting of the parameters
+that we are estimating.
+The objective functions are decomposed into two parts--
+average loss over the training examples and the regularization
+that guides the type of solution that we are after--
+in our case, how large of a margin
+we can achieve for the training parts.
+We talked about large margin linear classification,
+and how it can be turned into an optimization problem.
+To this end, we had to define margin boundaries--
+the distance that they lie from the decision boundary.
+How this relates to the hinge loss
+that we defined over the training examples.
+And how the regularization pushes the margin boundary
+as it apart.
+All of this together define, then, the objective
+function that guides how theta and theta 0 are resolved
+as the minimizing values.

@@ -30,3 +30,6 @@ $ \lambda = 100 $: Start to hit tranings examples
 $
 distance(ax+by+c=0, (x_0,y_0)) = { |ax_0+by_0+c| \over \sqrt{a^2+b^2} }
 $
+
+# 3. Regularization and Generalization
+

@@ -147,7 +147,7 @@ def check_hinge_loss_full_2():
     log(green("PASS"), ex_name, "")
 
 
-def check_hinge_loss_full_3():
+def check_hinge_loss_full_4():
     ex_name = "Hinge loss full: Test 4"
 
     feature_vector = np.array(
@@ -495,7 +495,7 @@ def main():
         check_hinge_loss_single()
         check_hinge_loss_full()
         check_hinge_loss_full_2()
-        check_hinge_loss_full_3()
+        check_hinge_loss_full_4()
         check_perceptron_single_update()
         check_perceptron()
         check_average_perceptron()

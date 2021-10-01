@@ -92,7 +92,7 @@ $ E_n(\theta,\theta_o) = 1/n * \sum_{i=1}^n( h(x^{(i)}) <> y^{(i)}) ..$
 
 sum of mis-classified points
 
-## Perceptron through orgin / with offset
+## Perceptron through orgin
 
 * Start with $ \theta = 0 $
 * For $ i = [1,T] $
@@ -102,7 +102,10 @@ $ if: \ y^{(i)}(\theta \cdot x^{(i)}) <= 0 \\
 then: \theta = \theta + y^{(i)}x^{(i)}
 $ 
 
+## Perceptron with offset
 
 
-
-
+$ if: \ y^{(i)}(\theta \cdot x^{(i)} + \theta_0) <= 0 \\  
+then: \theta = \theta + y^{(i)}x^{(i)} \\
+\theta_0 = \theta_0 + y^{(i)}
+$ 

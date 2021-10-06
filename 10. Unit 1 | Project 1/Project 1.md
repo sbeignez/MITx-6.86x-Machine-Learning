@@ -20,3 +20,9 @@ In order to automatically analyze reviews, you will need to complete the followi
 # 2. Hinge Loss
 
 In this project you will be implementing linear classifiers beginning with the Perceptron algorithm. You will begin by writing your loss function, a hinge-loss function. For this function you are given the parameters of your model $\theta$ and $\theta_0$ . Additionally, you are given a feature matrix in which the rows are feature vectors and the columns are individual features, and a vector of labels representing the actual sentiment of the corresponding feature vector.
+
+
+
+
+
+"In this problem, you will need to adapt this update rule to add a bias term () to the hypothesis, but take care not to penalize the magnitude of ."

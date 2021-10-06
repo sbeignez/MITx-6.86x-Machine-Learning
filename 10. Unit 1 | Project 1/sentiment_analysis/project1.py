@@ -59,6 +59,7 @@ def hinge_loss_full(feature_matrix, labels, theta, theta_0):
 
     def hinge(x):
         return max(0., 1. - x)
+
     n = float(np.size(labels))
 
     loss = labels * ( np.dot(theta, feature_matrix.T) + theta_0 )
@@ -105,6 +106,8 @@ def perceptron_single_step_update(
     completed.
     """
 
+    # print("fv", feature_vector, "label", label, "t", current_theta, "t0", current_theta_0)
+
     theta, theta_0 = current_theta, current_theta_0
 
     if label * ( np.dot(current_theta, feature_vector) + current_theta_0) <= 1e-8:
@@ -139,12 +142,23 @@ def perceptron(feature_matrix, labels, T):
     theta_0, the offset classification parameter, after T iterations through
     the feature matrix.
     """
-    theta = np.array()
-    theta_0 = 0.
-    # Your code here
+    size = feature_matrix.shape[1]
+    theta = np.zeros((size,)) # dtype=np.float32
+    theta_0 = 0.0
+
+    # print("matrix", feature_matrix)
+    # print("matrix[0]", feature_matrix[0])
+    # print("labels", labels)
+    # print("labels[0]", labels[0])
+    # print("size", size)
+
     for t in range(T):
         for i in get_order(feature_matrix.shape[0]):
-            # Your code here
+            (theta, theta_0) = perceptron_single_step_update(
+                feature_matrix[i,:],
+                labels[i],
+                theta,
+                theta_0)
             pass
     
     return (theta, theta_0)
@@ -179,8 +193,23 @@ def average_perceptron(feature_matrix, labels, T):
     Hint: It is difficult to keep a running average; however, it is simple to
     find a sum and divide.
     """
-    # Your code here
-    raise NotImplementedError
+    sum_theta, sum_theta_0  = np.zeros((feature_matrix.shape[1],)), 0.0
+    theta, theta_0 = np.zeros((feature_matrix.shape[1],)), 0.0
+
+    for t in range(T):
+        
+        n = 0
+        for i in get_order(feature_matrix.shape[0]):
+            (theta, theta_0) = perceptron_single_step_update(
+                feature_matrix[i,:],
+                labels[i],
+                theta,
+                theta_0)
+            n += 1
+            sum_theta = sum_theta + theta
+            sum_theta_0 = sum_theta_0 + theta_0
+           
+    return ( sum_theta / (n*T), sum_theta_0 / (n*T) )
 
 
 def pegasos_single_step_update(
@@ -209,8 +238,14 @@ def pegasos_single_step_update(
     real valued number with the value of theta_0 after the current updated has
     completed.
     """
-    # Your code here
-    raise NotImplementedError
+
+    if label * ( np.dot(current_theta, feature_vector) + current_theta_0) <= 1:
+        current_theta = np.dot((1 - eta * L ) , current_theta) + eta * label * feature_vector
+        current_theta_0 = current_theta_0 + eta * label
+    else:
+        current_theta = np.dot((1 - eta * L ) , current_theta)
+
+    return (current_theta , current_theta_0)
 
 
 def pegasos(feature_matrix, labels, T, L):
@@ -242,8 +277,27 @@ def pegasos(feature_matrix, labels, T, L):
     number with the value of the theta_0, the offset classification
     parameter, found after T iterations through the feature matrix.
     """
-    # Your code here
-    raise NotImplementedError
+    n = feature_matrix.shape[0]
+    m = feature_matrix.shape[1]
+    # (nsamples, nfeatures) = feature_matrix.shape
+    theta = np.zeros((m,))
+    theta_0 = 0.0
+    t_all = [i for i in range(1, n * T + 1)]
+    t_idx = 0
+
+    for t in range(T):
+        for i in get_order(feature_matrix.shape[0]):
+            eta = 1 / np.sqrt(t_all[t_idx])
+            (theta, theta_0) = pegasos_single_step_update(
+                feature_matrix[i,:],
+                labels[i],
+                L,
+                eta,
+                theta,
+                theta_0)
+            t_idx +=1
+    
+    return (theta, theta_0)
 
 # Part II
 
@@ -265,8 +319,20 @@ def classify(feature_matrix, theta, theta_0):
     given theta and theta_0. If a prediction is GREATER THAN zero, it should
     be considered a positive classification.
     """
-    # Your code here
-    raise NotImplementedError
+    def clasify_func(vector):
+        if ( np.dot(theta, vector) + theta_0 ) >= 1e-8:
+            return 1
+        else:
+            return -1
+
+    n = feature_matrix.shape[0]
+    c = np.zeros(n)
+
+    for i in range(n):
+        c[i] = clasify_func(feature_matrix[i])
+
+    return c 
+    
 
 
 def classifier_accuracy(
@@ -301,8 +367,24 @@ def classifier_accuracy(
     trained classifier on the training data and the second element is the
     accuracy of the trained classifier on the validation data.
     """
-    # Your code here
-    raise NotImplementedError
+
+    # training
+
+    theta, theta_0 = classifier(
+            train_feature_matrix,
+            train_labels,
+            **kwargs,
+            )
+    
+    # training classification
+    training_labels = classify(train_feature_matrix, theta, theta_0)
+    training_accuracy = accuracy(training_labels, train_labels)
+
+    # validation classification
+    validation_labels = classify(val_feature_matrix, theta, theta_0)
+    validation_accuracy = accuracy(validation_labels, val_labels)
+
+    return (training_accuracy, validation_accuracy)
 
 
 def extract_words(input_string):
@@ -325,10 +407,16 @@ def bag_of_words(texts):
 
     Feel free to change this code as guided by Problem 9
     """
-    # Your code here
+ 
+    # 9
+    from pathlib import Path
+    txt = Path('stopwords.txt').read_text()
+    stopwords = txt.split("\n")
+
     dictionary = {} # maps word to unique index
     for text in texts:
         word_list = extract_words(text)
+        word_list = [x for x in word_list if x not in stopwords] #9
         for word in word_list:
             if word not in dictionary:
                 dictionary[word] = len(dictionary)
@@ -354,7 +442,7 @@ def extract_bow_feature_vectors(reviews, dictionary):
         word_list = extract_words(text)
         for word in word_list:
             if word in dictionary:
-                feature_matrix[i, dictionary[word]] = 1
+                feature_matrix[i, dictionary[word]] = feature_matrix[i, dictionary[word]] + 1 #9
     return feature_matrix
 
 
@@ -364,3 +452,4 @@ def accuracy(preds, targets):
     returns the percentage and number of correct predictions.
     """
     return (preds == targets).mean()
+

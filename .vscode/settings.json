@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "mitx/bin/python"
+    "python.pythonPath": "mitx/bin/python",
+    
 }

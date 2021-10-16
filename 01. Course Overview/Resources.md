@@ -3,7 +3,11 @@
 
 ## COURSES
 
-https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-036-introduction-to-machine-learning-fall-2020/
+MIT / [Machine learning](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-036-introduction-to-machine-learning-fall-2020/)
+
+Google / [ML crash course](https://developers.google.com/machine-learning/crash-course)  
+Tensor Flow / [Curriculum](https://www.tensorflow.org/resources/learn-ml#curriculums)
+
 
 ## Course notes:
 
@@ -15,4 +19,4 @@ https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-036-in
 
 ## KATEX
 
-https://katex.org/docs/supported.html
+[KATEX refernece](https://katex.org/docs/supported.html)

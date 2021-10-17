@@ -100,3 +100,10 @@ Thu, Dec 23, 2021
 36% for the Projects (divided equally among 4 (out of 5) 
 13% for the Midterm exam (timed) 
 20% for the final exam (timed)
+
+
+
+
+
+Coupon ZGY11119949 applied for 15% off
+SEPT20 (20% off)

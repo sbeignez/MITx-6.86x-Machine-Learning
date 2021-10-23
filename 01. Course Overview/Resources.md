@@ -20,3 +20,7 @@ Tensor Flow / [Curriculum](https://www.tensorflow.org/resources/learn-ml#curricu
 ## KATEX
 
 [KATEX refernece](https://katex.org/docs/supported.html)
+
+
+# Github 
+https://github.com/dnackat/mitx-6.86x-machine-learning

@@ -5,35 +5,39 @@
 Course MITx 6.86x "Machine Learning with Python: From Linear Models to Deep Learning".  
 MIT | edX | Sept-Dec 2021
 
-## Unit 1 | Linear Classifiers and Generalizations
-* Lecture 1. Introduction to Machine Learning 
-* Lecture 2. Linear Classifier and Perceptron 
-* Lecture 3 Hinge loss, Margin boundaries and Regularization 
-* Lecture 4. Linear Classification and Generalization
-  > Project 1: Automatic Review Analyzer
+## Unit 1 | **Linear Classifiers and Generalizations**
+* Lecture 01. Introduction to Machine Learning 
+* Lecture 02. Linear Classifier and Perceptron 
+* Lecture 03. Hinge loss, Margin boundaries and Regularization 
+* Lecture 04. Linear Classification and Generalization  
+   
+1. Project 1: Automatic Review Analyzer
 
-## Unit 2 | Nonlinear Classification, Linear regression, Collaborative Filtering
-* Lecture 5. Linear Regression 9 of 9 possible points (9/9) 100%
-* Lecture 6. Nonlinear Classification 
-* Lecture 7. Recommender Systems 
-  > Project 2: Digit recognition (part 1)
+## Unit 2 | **Nonlinear Classification, Linear regression, Collaborative Filtering**
+* Lecture 05. Linear Regression 9 of 9 possible points (9/9) 100%
+* Lecture 06. Nonlinear Classification 
+* Lecture 07. Recommender Systems 
 
-##	Unit 3 | Neural networks
-* Lecture 8. Introduction to Feedforward Neural Networks
-* Lecture 9. Feedforward Neural Networks, Back Propagation, and Stochastic Gradient Descent (SGD)
+> Project 2: Digit recognition (part 1)
+
+## Unit 3 | **Neural networks**
+* Lecture 08. Introduction to Feedforward Neural Networks
+* Lecture 09. Feedforward Neural Networks, Back Propagation, and Stochastic Gradient Descent (SGD)
 * Lecture 10. Recurrent Neural Networks 1
 * Lecture 11. Recurrent Neural Networks 2
 * Lecture 12. Convolutional Neural Networks
-  > Project 3: Digit recognition (part 2)
+
+> Project 3: Digit recognition (part 2)
   
-## Unit 4 | ?
+## Unit 4 | **Un-supervised Learning**
 * Lecture 13. Clustering 1
 * Lecture 14. Clustering 2
 * Lecture 15. Generative Models
 * Lecture 16. Mixture Models; EM algorithm
-  > Project 4: Collaborative Filtering via Gaussian Mixtures
 
-## Unit 5 | ?
+> Project 4: Collaborative Filtering via Gaussian Mixtures
+
+## Unit 5 | **Re-inforcement Learning**
 * Lecture 17. Reinforcement Learning 1
 * Lecture 18. Reinforcement Learning 2
 * Lecture 19: Applications: Natural Language Processing

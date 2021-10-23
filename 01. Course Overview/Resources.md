@@ -24,3 +24,4 @@ Tensor Flow / [Curriculum](https://www.tensorflow.org/resources/learn-ml#curricu
 
 # Github 
 https://github.com/dnackat/mitx-6.86x-machine-learning
+https://github.com/sylvaticus/MITx_6.86x/blob/master/Unit%2003%20-%20Neural%20networks/Unit%2003%20-%20Neural%20networks.md

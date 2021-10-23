@@ -8,6 +8,7 @@ MIT / [Machine learning](https://ocw.mit.edu/courses/electrical-engineering-and-
 Google / [ML crash course](https://developers.google.com/machine-learning/crash-course)  
 Tensor Flow / [Curriculum](https://www.tensorflow.org/resources/learn-ml#curriculums)
 
+https://www.deeplearningbook.org
 
 ## Course notes:
 
@@ -22,6 +23,6 @@ Tensor Flow / [Curriculum](https://www.tensorflow.org/resources/learn-ml#curricu
 [KATEX refernece](https://katex.org/docs/supported.html)
 
 
-# Github 
+## Github 
 https://github.com/dnackat/mitx-6.86x-machine-learning
 https://github.com/sylvaticus/MITx_6.86x/blob/master/Unit%2003%20-%20Neural%20networks/Unit%2003%20-%20Neural%20networks.md

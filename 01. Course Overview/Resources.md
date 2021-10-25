@@ -24,5 +24,12 @@ https://www.deeplearningbook.org
 
 
 ## Github 
-https://github.com/dnackat/mitx-6.86x-machine-learning
-https://github.com/sylvaticus/MITx_6.86x/blob/master/Unit%2003%20-%20Neural%20networks/Unit%2003%20-%20Neural%20networks.md
+DNACKAT: https://github.com/dnackat/mitx-6.86x-machine-learning
+https://github.com/sylvaticus/MITx_6.86x/
+
+https://github.com/Shawn-xyg/MITx-6.86x-Machine-Learning-with-Python
+
+
+## Standard notation
+https://learning.edx.org/course/course-v1:MITx+6.86x+3T2021/block-v1:MITx+6.86x+3T2021+type@sequential+block@u0s4_mechanics/block-v1:MITx+6.86x+3T2021+type@vertical+block@u0s4_mechanics-tab3  
+How standard?

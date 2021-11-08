@@ -1,0 +1,55 @@
+
+Let's understand through examples
+how constrained a set of linear classifiers really is.
+So if we take a set of examples, the training
+set, and ask whether it's separable,
+whether there exists a linear classifier that correctly
+classifies all the training examples.
+If our training set looks like this--
+these are positively labeled points,
+these are negatively labeled points--
+then there exists a linear classifier
+through origin that correctly classifies those points.
+
+If I take an example of another training set here--
+positively labeled points, negatively labeled points--
+
+these are no longer separable through origin.
+That is, there is no linear classifier
+through the origin that correctly
+classifies these points.
+If we try to draw a linear classifier through origin
+to correctly classify these points,
+it would always misclassify some.
+But as a training set, it is still linearly separable,
+no longer through origin, but there is a linear classifier
+with that offset parameter that now correctly classifies
+those examples.
+Here's an example of just four points
+for which there is no linear classifier that
+correctly classifies those four points, OK?
+I cannot find a linear classifier here that correctly
+classifies the positive labeled points without misclassifying
+one of the negatives, for example, all right?
+So this illustrates that the set of linear classifiers
+is actually quite constrained in the way
+that it can make decisions.
+And I can even find just four points in general positions
+that the linear classifier no longer succeeds in finding
+a good solution, all right?
+So a little bit more formally, the training examples
+are said to be linearly separable if there exists
+a linear classifier that correctly classifies
+those training points, OK?
+Put another way, if the there exists parameter vectors, theta
+hat and theta not, scalar parameter theta not hat,
+such that this linear function, it's
+sine agrees with the given label, OK?
+This product is positive when the classifier,
+the sign of this, would agree with the corresponding label y.
+So if there is a linear classifier
+in the set that would correctly classify those training points,
+then the training points are said to be linearly separable.
+And we've already seen cases where that linear separation
+does not succeed.
+So the set of linear classifiers is inherently constrained.

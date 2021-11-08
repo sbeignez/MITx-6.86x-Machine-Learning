@@ -1,0 +1,276 @@
+
+All right.
+We defined earlier, training error
+for any classifier as a fraction of training samples
+that are misclassified--
+so in terms of whether or not the classifier
+applied to their training example,
+whether it disagrees with a given label for that example.
+All right.
+We can now write this down for linear classifiers
+through origin slightly differently.
+Since each classifier is specified by a primitive vector
+theta, we can think of evaluating a parameter vector
+in terms of its resulting training
+error and its, again, fraction of misclassifying points
+by now a linear classifier.
+So I get the double brackets here,
+but now I'm saying just whether the given label, its sign
+agrees with the linear prediction.
+So if this is 0 or negative, then a linear classifier
+that is the sign of that dot product
+would be different from the given label.
+OK?
+And note, that when this is exactly 0,
+if the example lies exactly on the linear boundary,
+we count that as an error, since we
+don't know which way we should really classify that point.
+OK?
+So that is now the training error expressed specifically
+for linear classifiers through origin.
+OK?
+Now we can analogously define training error
+for a linear classifier, general linear classifier,
+as the fraction of misclassified points,
+by looking at whether their given label agrees
+with the sign of the linear function used to define
+the linear classifier.
+If that is 0 or negative, then we call it an error.
+So linear classifier, general linear classifier,
+takes the sign of this.
+If that sign agrees with that, we get a positive 1, so not
+an error.
+Otherwise, we call it an error, including the 0.
+
+We have now defined the set of linear classifiers.
+We understand how to parameterize it,
+and we have defined how to measure error
+for a set of linear classifiers, or for each linear classifier.
+We can now turn to the problem of actually finding
+a linear classifier that agrees with the training examples
+to the extent possible.
+To this end, we're going to progressively define
+a learning algorithm, perceptron algorithm, that
+takes in a training set and finds here an easily parameter
+vector, only parameter vector, theta, so
+a linear classifier through origin,
+that hopefully correctly classifies all the training
+samples.
+This algorithm will succeed if there
+exist any linear classifiers through origin
+that currently classifies the training samples.
+Then the algorithm will find a solution to that problem.
+All right, so let's progressively define
+what this algorithm is and understand
+why it succeeds in finding a parameter vector that's
+actually reasonable.
+So we start with a 0 parameter vector.
+Well, there, our parameters are set to 0.
+OK.
+Then we go through training examples.
+Say, take the i-th example.
+And we check whether it is misclassified.
+Remember, this is the argument to the error, when
+we just defined it and tailored the error
+for a linear classifier.
+If this product here is 0 or negative,
+then the linear classifier makes an error.
+So if an error, then we do something.
+We update the parameters to correct for that error.
+OK?
+And since parameter vectors are 0, this product is 0.
+And initially, so the first example
+is always considered an error.
+OK?
+So perceptron algorithm makes actually a very simple update
+to the parameters-- so the parameters
+after the update, the parameters before,
+plus label, scalar label, plus management,
+times the vector training sample itself;
+OK, very simple update to the parameter in response
+to any mistake.
+So we're going to try to understand this algebraically,
+why this update is actually doing something useful,
+and then later provide a geometric example,
+demonstrating how that works.
+OK.
+So let's look at whether an example that is misclassified,
+on the basis of which we perform the update, whether it would
+be misclassified if reintroduced as an example of the next step.
+OK?
+So then we would consider calculating an error,
+taking yi, the label here, and then
+parameter vector, now the old parameters,
+which are in easily 0, plus yi and the example
+xi in a product with the example xi itself.
+So we are evaluating whether or not
+this would be negative or 0 after the update.
+Since the parameters are initially 0,
+we can just multiply this n label times itself.
+It's always 1, since the labels are plus minus 1.
+And vector in the product with itself
+gives you the squared norm of that vector.
+OK?
+So after the update, we would get the squared norm
+of the vector itself.
+OK?
+So in using an example of origin error and after the update,
+we get a positive value.
+So the same example would not, if reintroduced
+at the next step, would not be misclassified anymore.
+So the updated algebraically is doing something useful.
+Now, what are we going to do here over the whole training
+set is we start with the 0 parameter vector
+and then go over all the training examples.
+And if the i-th example is a mistake,
+then we perform that update that we just discussed.
+OK?
+So we'd nudge the parameters in the right direction,
+based on an individual update.
+Now, since the different training examples
+might update the parameters in different directions,
+it is possible that the later updates actually
+make the earlier undo some of the earlier updates,
+and some of the earlier examples are no longer
+correctly classified.
+So we have to go through the training set here
+multiple times, here capital T times
+go through the training set, either in order
+or select at random, look at whether it's a mistake,
+and perform a simple update.
+OK?
+So this defies the whole perceptron procedure
+for linear classifiers through origin.
+It takes in as the training set.
+It's tailored for linear classifiers.
+Here it also takes in a parameter
+that tells you how many times you tried
+to go over the training set.
+OK?
+Now, theoretically, this classifier
+for a sufficiently large T, if there
+exists a linear classifier through origin that correctly
+classifies the training samples, this simple, very
+simple algorithm actually will find a solution
+to that problem.
+There are many solutions typically,
+but this will find one.
+So for example, if here are the training examples,
+here's the coordinates x1 and x2, here is the origin,
+perceptron algorithm might find, say, this as the solution.
+But there would certainly be multiple different linear
+classifiers through origin that also work.
+Let's now look at a geometric example
+of how this algorithm works.
+So we start with a parameter vector that's all 0.
+OK?
+We are given one example here.
+Let's say it's a positive, a labeled point.
+OK, now perceptron algorithm sees that as a mistake.
+First example is always a mistake.
+So the updated parameters are now
+the old ones, which is just a 0, plus label for this example
+times the example itself.
+The label for this is plus 1, and this is the example.
+OK?
+So the parameter vector after the first update is simply xi.
+OK?
+So if this is now theta--
+it's the same as the example itself--
+there, the decision boundary goes orthogonal to that.
+OK?
+So clearly, that example is now on the positive side
+of that decision boundary.
+Let's introduce another example.
+Let's make it a negative here, here, a negatively
+labeled point.
+
+It is misclassified, so the perceptron performs an update.
+So the update is theta plus now the, say, j-th example.
+
+xj.
+This label is now negative, and here is just the example
+itself.
+And previously, this was just xi.
+So as a result, we get xi minus xj
+as the resulting parameter vector after the update.
+So that would be then the vector here,
+going from the negative to the positive labeled points.
+So if we transplant that parameter vector here
+to the origin--
+so the new parameter vector after the two updates is here,
+and the corresponding decision boundary is orthogonal to that
+and going here.
+So after the two updates, the perceptron algorithm,
+if these were the only two points,
+the perceptron algorithm would have
+found a solution that correctly classifies
+both of these points.
+
+All right.
+So it is possible.
+You can easily come up with the examples
+where the perceptron algorithm needs
+to go over the training set multiple times
+before a separable solution is found.
+
+All right, so now we can generalize the perceptron
+algorithm to run with the general class
+of linear classifiers with the offset parameter.
+The only difference here is that now we
+initialize the parameter back to 0, as well as the scalar to 0.
+And we check the error, as we did before,
+whether the classifier makes a mistake,
+now involving the absolute parameter.
+And the update now involves updating the parameter vector
+theta exactly as before, but also
+updating the offset parameter in this way.
+So let's motivate how the offset parameter update arises here.
+If you think of a set of linear classifiers here--
+let's take an arbitrary x theta dot x plus theta 0,
+I can write this slightly differently
+as if it were a linear classifier through origin,
+but taking slightly different examples.
+So I can write the parameter vector now, theta here,
+and add that scalar theta 0 as the last
+coordinate here and then write down the example
+and put 1 here as the last coordinate.
+OK?
+So effectively, I can think of the linear classifiers
+with offset parameter as a linear classifier
+through origin, just operating on slightly different examples.
+OK?
+So if you now look at this updated equations here,
+it is actually theta.
+Theta 0 is updated by taking the previous values
+for those parameters plus label times an example exactly
+as here.
+OK?
+So nothing is really different here in terms of the update.
+It's just a direct generalization
+of the perceptron algorithm without answer.
+All right, so now we have a general learning algorithm,
+the simplest one.
+And as I mentioned earlier, it can
+be generalized to be quite powerful and therefore,
+a useful algorithm to understand.
+All right.
+So what are the key things to learn from this lecture?
+We talked about parametric families of classifiers,
+sets of classifiers.
+So when we look at a problem, classification problem,
+in light of a training set, we define a set
+of classifiers, our choices from which we
+find a classifier that best fits the training set.
+We defined specifically what the set of linear classifiers
+is, how to parameterize linear classifiers.
+We talked about linear separation,
+when the set of linear classifiers
+is sufficient to separate the training set.
+We did that by means of examples.
+And we defined a learning algorithm
+for the set of linear classifiers
+that can take a training set as an input.
+If that training set is linearly separable,
+then the perceptron algorithm succeeds in finding a solution
+to the problem.

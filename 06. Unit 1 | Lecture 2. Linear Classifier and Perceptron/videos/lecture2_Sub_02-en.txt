@@ -1,0 +1,215 @@
+
+All right, let's try to understand
+the set of linear classifiers.
+In particular, let's take a specific linear classifier.
+It divides the space into two halves linearly.
+So on one side, the classifier says that all the examples
+are positive.
+And on the other side, they are labeled negative.
+The dividing line here is also called decision boundary.
+
+In 2D, that decision boundary is a line.
+If x was a one-dimensional quantity,
+the decision boundary would be a point.
+In 3D, it would be a plane.
+And in higher dimensions, it's called
+hyperplane that divides the space into two halves.
+We can change the linear decision boundary
+here and the linear classifier by moving the line around.
+So here's another example of a linear classifier.
+And again, the shaded side is positive.
+And the unshaded one is negative.
+And by drawing these lines in this 2D space,
+we get the set of linear classifiers over the plane.
+
+So now we need to parameterize the linear classifiers,
+so that we can effectively search for the right one
+given the training set.
+So let's see how we can index and parameterize
+these classifiers.
+
+So let's start with even a more restricted version instead
+of linear classifiers through origin.
+The only difference here is that that dividing line now
+is not arbitrarily placed in this two-dimensional space,
+but it has to go through origin.
+So for example, that line could look like so.
+So the equation for this line would
+be the set of all points that satisfy an equation for a line
+through origin.
+To define that, we need to introduce
+two parameters, theta 1 that multiplies x1 coordinate,
+and theta 2 that multiplies x2 coordinate.
+And that is equal to 0.
+So you fix the parameters, theta 1 and theta 2.
+That fixes what that line is.
+And all the x's here--
+x here is a vector--
+that satisfy this equation lie along this line.
+So this is again the decision boundary.
+
+We can write this in a vector form
+by introducing now theta as a vector with two coordinates,
+theta 1 and theta 2.
+And x here is also a vector with two coordinates, x1 and x2.
+So we can just write down the decision boundary as all x such
+that the inner product or dot product between theta and x
+is equal to zero.
+
+OK, so from this equation, you can
+see that the parameter vector of theta
+is orthogonal to all the points that
+lie on the decision boundary.
+So if we take a point here and look
+at the vector from the origin, then theta
+must be somewhere here along this orthogonal line.
+
+So now, let's look at the theta.x as a linear function.
+So this is a linear function.
+Parameter vector of theta is fixed.
+X varies.
+So it's your linear function of x.
+It is positive on one side of this line
+and negative on the other side.
+So let's just pick that this side it is positive.
+And on this side, it is negative.
+And it's exactly 0 along the decision boundary.
+
+So now we know based on this choice
+which direction theta must be.
+Theta must be oriented in this direction.
+Because if you take any point here
+for which the linear function takes a positive value,
+and then you look at the vector of that,
+then the inner product between that x and theta is positive.
+And it's negative for any point here.
+
+So now, we have parametric way of writing the decision
+boundaries.
+And we know which side is a positive one
+and which side is the negative one.
+This now allows us to define the set of linear classifiers
+through origin.
+So let's make that a little bit more precise.
+We have a classifier.
+Now parameterized by the vector, theta.
+So each choice of theta defines one classifier.
+You change theta, you get a different classifier.
+It's oriented differently.
+But it also goes through origin.
+So that classifier is now simply the sign of theta dot x--
+the labels that it returns is a sign of that linear function
+theta dot x.
+And in general, theta lives in three-dimensional space,
+as would x.
+So this is now the set of linear classifiers through origin.
+
+So all the choices of--
+you try all the parameter values,
+you will look at different classifiers.
+And all the classifiers that you can
+get by bearing the parameter theta are linear classifiers.
+And the whole thing is the set of linear classifiers.
+Note that this association between the classifier
+and the parameter vector theta is not unique.
+There are multiple parameter vectors theta
+that defined exactly the same classifier.
+But each linear classifier through origin
+has at least one--
+in fact, many parameter vectors theta
+that correspond to the same decision
+boundary, same decisions.
+So what is that degree of freedom here?
+If you look at that linear function,
+the classifier only cares about the sign of that.
+So however, we multiply the value of theta here,
+we will get the same classifier as a result.
+So the norm of the parameter vector of theta
+is not relevant in terms of the decision boundary.
+But we will make use of this degree of freedom later on.
+
+One original point that we can understand
+is that the theta dot x is the degree to which we classify
+the example positively or negatively.
+That degree only changes when we move orthogonally
+to the decision boundary.
+If we take two points here that are equidistant to the decision
+boundary and are on the same side,
+they are classified as strongly positively.
+If their distance from the boundary changes,
+then the degree to which they are classified on that side
+changes as well.
+
+Now we can use this and define the set of linear classifiers
+without the constraint that they have to go through origin.
+The only difference here is that we can now move the boundary--
+decision boundary to be anywhere, not just those
+that go through origin.
+Again, we have an orientation of the boundary
+as well as the location.
+So the decision boundary here is now written in a vector form
+slightly differently.
+It's all x, such that theta dot x,
+which is now-- that inner product is a scalar.
+We add a scalar parameter of theta 0 offset parameter.
+And that whole thing equals zero.
+This is now the decision boundary.
+And it is theta 0 that controls the location
+of the boundary, where it is in relation to origin.
+And theta here controls the orientation of that boundary.
+So again, theta, as a vector, is orthogonal to the decision
+boundary here.
+So on this side on the boundary, again, theta dot x plus theta 0
+is positive.
+As every time we are on the same side as where theta points,
+than the linear function here gives as a positive value.
+It's exactly 0 along the boundary.
+And it's negative on the other side.
+
+Now, we can use this to define the set of linear classifiers
+without the constraint that it has
+to go through origin by defining that classifier now
+with two parameters, parameter vector of theta
+and that scalar theta 0 offset parameter.
+And again, similarly saying that the label that's returned
+is just a sign of that linear function,
+theta dot x plus theta 0.
+You specify the two parameters.
+You specify the orientation of the line
+and where it's located.
+And we know which side is positive
+and which side is negative.
+So theta and theta 0 fully specify the classifier.
+Again, the mapping is not unique.
+There are many theta and theta 0 that define the same decision
+boundary.
+But its classifier has now a set of parameters that correspond
+to the same decision boundary.
+And this whole set of such classifiers,
+is then obtained by varying theta as a vector in general
+in R d and theta 0 as a scalar parameter.
+So this is now the set of linear classifiers.
+
+So when we look for linear classifier,
+we try to find parameters theta and theta
+0 on the basis of the training set.
+And we want to select those class parameters in such a way
+that the classifier makes correct decisions.
+
+So to understand this a little bit more,
+let's look at whether--
+in the figure that I drew, whether the theta
+0 scalar parameter here is positive or negative.
+So what is that value?
+We can just figure it out from this
+if we take that linear function, we put origin in place of x.
+So we have theta dot, now a zero vector, plus theta 0.
+And we see from the figure that this origin
+lies on the negative side.
+So this has to be negative, which implies,
+since this is now 0, that theta 0 itself is negative.
+If we move this boundary in this direction past the origin,
+theta 0 would become positive.
+
+That is the set of linear classifiers through origin
+earlier and now the full set of linear classifiers.

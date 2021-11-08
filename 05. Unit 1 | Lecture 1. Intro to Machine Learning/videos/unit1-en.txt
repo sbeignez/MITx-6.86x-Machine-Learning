@@ -1,0 +1,30 @@
+
+So in this course, you will see two types of lectures.
+Tablet lectures where you will see me writing on the tablet
+and hear my voice but not actually see my face.
+You will also see live blackboard lectures
+given by Professor Barzilay.
+And we will alternate different topics given by me
+and given by Professor Barzilay.
+Now, this course has five units.
+Unit number 1 focuses on very basic building block
+of machine learning methods called linear classification.
+And you will learn a very basic algorithm
+for solving that problem that will carry on later on.
+And you can use it to solve much more complicated problems
+as well.
+Now, as an illustration then to understand
+how these methods actually apply in practice,
+you will also be solving a project.
+This is like a mini application, going through motions
+that you would have to do if you actually solved
+a real application problem.
+So the application in this case is predicting whether an Amazon
+product review, looking at only the text,
+whether the review is positive or negative.
+Now, we expect that there is a little bit
+of a gap between what we have taught you
+and what is precisely required to solve this project.
+So we expect you to think through and try to figure out
+what type of features to use, to feed
+in to the linear classifier, and so on.

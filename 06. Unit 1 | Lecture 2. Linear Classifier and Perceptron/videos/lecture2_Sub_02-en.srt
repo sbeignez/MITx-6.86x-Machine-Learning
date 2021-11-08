@@ -1,0 +1,864 @@
+0
+00:00:00,000 --> 00:00:01,660
+
+
+1
+00:00:01,660 --> 00:00:03,220
+All right, let's try to understand
+
+2
+00:00:03,220 --> 00:00:05,530
+the set of linear classifiers.
+
+3
+00:00:05,530 --> 00:00:09,890
+In particular, let's take a specific linear classifier.
+
+4
+00:00:09,890 --> 00:00:14,170
+It divides the space into two halves linearly.
+
+5
+00:00:14,170 --> 00:00:20,310
+So on one side, the classifier says that all the examples
+
+6
+00:00:20,310 --> 00:00:21,690
+are positive.
+
+7
+00:00:21,690 --> 00:00:26,800
+And on the other side, they are labeled negative.
+
+8
+00:00:26,800 --> 00:00:32,695
+The dividing line here is also called decision boundary.
+
+9
+00:00:32,695 --> 00:00:36,680
+
+
+10
+00:00:36,680 --> 00:00:40,040
+In 2D, that decision boundary is a line.
+
+11
+00:00:40,040 --> 00:00:44,900
+If x was a one-dimensional quantity,
+
+12
+00:00:44,900 --> 00:00:47,480
+the decision boundary would be a point.
+
+13
+00:00:47,480 --> 00:00:49,910
+In 3D, it would be a plane.
+
+14
+00:00:49,910 --> 00:00:52,220
+And in higher dimensions, it's called
+
+15
+00:00:52,220 --> 00:00:57,590
+hyperplane that divides the space into two halves.
+
+16
+00:00:57,590 --> 00:01:03,050
+We can change the linear decision boundary
+
+17
+00:01:03,050 --> 00:01:07,700
+here and the linear classifier by moving the line around.
+
+18
+00:01:07,700 --> 00:01:13,810
+So here's another example of a linear classifier.
+
+19
+00:01:13,810 --> 00:01:17,290
+And again, the shaded side is positive.
+
+20
+00:01:17,290 --> 00:01:20,420
+And the unshaded one is negative.
+
+21
+00:01:20,420 --> 00:01:25,890
+And by drawing these lines in this 2D space,
+
+22
+00:01:25,890 --> 00:01:31,400
+we get the set of linear classifiers over the plane.
+
+23
+00:01:31,400 --> 00:01:34,710
+
+
+24
+00:01:34,710 --> 00:01:37,740
+So now we need to parameterize the linear classifiers,
+
+25
+00:01:37,740 --> 00:01:41,730
+so that we can effectively search for the right one
+
+26
+00:01:41,730 --> 00:01:43,630
+given the training set.
+
+27
+00:01:43,630 --> 00:01:46,770
+So let's see how we can index and parameterize
+
+28
+00:01:46,770 --> 00:01:48,000
+these classifiers.
+
+29
+00:01:48,000 --> 00:01:50,550
+
+
+30
+00:01:50,550 --> 00:01:54,750
+So let's start with even a more restricted version instead
+
+31
+00:01:54,750 --> 00:01:57,630
+of linear classifiers through origin.
+
+32
+00:01:57,630 --> 00:02:01,080
+The only difference here is that that dividing line now
+
+33
+00:02:01,080 --> 00:02:06,510
+is not arbitrarily placed in this two-dimensional space,
+
+34
+00:02:06,510 --> 00:02:09,000
+but it has to go through origin.
+
+35
+00:02:09,000 --> 00:02:15,050
+So for example, that line could look like so.
+
+36
+00:02:15,050 --> 00:02:18,550
+So the equation for this line would
+
+37
+00:02:18,550 --> 00:02:23,800
+be the set of all points that satisfy an equation for a line
+
+38
+00:02:23,800 --> 00:02:25,140
+through origin.
+
+39
+00:02:25,140 --> 00:02:27,250
+To define that, we need to introduce
+
+40
+00:02:27,250 --> 00:02:32,710
+two parameters, theta 1 that multiplies x1 coordinate,
+
+41
+00:02:32,710 --> 00:02:36,790
+and theta 2 that multiplies x2 coordinate.
+
+42
+00:02:36,790 --> 00:02:39,650
+And that is equal to 0.
+
+43
+00:02:39,650 --> 00:02:43,970
+So you fix the parameters, theta 1 and theta 2.
+
+44
+00:02:43,970 --> 00:02:47,400
+That fixes what that line is.
+
+45
+00:02:47,400 --> 00:02:50,720
+And all the x's here--
+
+46
+00:02:50,720 --> 00:02:52,700
+x here is a vector--
+
+47
+00:02:52,700 --> 00:02:59,820
+that satisfy this equation lie along this line.
+
+48
+00:02:59,820 --> 00:03:06,715
+So this is again the decision boundary.
+
+49
+00:03:06,715 --> 00:03:11,910
+
+
+50
+00:03:11,910 --> 00:03:16,200
+We can write this in a vector form
+
+51
+00:03:16,200 --> 00:03:21,290
+by introducing now theta as a vector with two coordinates,
+
+52
+00:03:21,290 --> 00:03:24,190
+theta 1 and theta 2.
+
+53
+00:03:24,190 --> 00:03:32,220
+And x here is also a vector with two coordinates, x1 and x2.
+
+54
+00:03:32,220 --> 00:03:36,900
+So we can just write down the decision boundary as all x such
+
+55
+00:03:36,900 --> 00:03:42,390
+that the inner product or dot product between theta and x
+
+56
+00:03:42,390 --> 00:03:43,410
+is equal to zero.
+
+57
+00:03:43,410 --> 00:03:47,440
+
+
+58
+00:03:47,440 --> 00:03:50,450
+OK, so from this equation, you can
+
+59
+00:03:50,450 --> 00:03:54,500
+see that the parameter vector of theta
+
+60
+00:03:54,500 --> 00:03:58,290
+is orthogonal to all the points that
+
+61
+00:03:58,290 --> 00:04:00,660
+lie on the decision boundary.
+
+62
+00:04:00,660 --> 00:04:04,170
+So if we take a point here and look
+
+63
+00:04:04,170 --> 00:04:07,620
+at the vector from the origin, then theta
+
+64
+00:04:07,620 --> 00:04:11,760
+must be somewhere here along this orthogonal line.
+
+65
+00:04:11,760 --> 00:04:14,360
+
+
+66
+00:04:14,360 --> 00:04:18,990
+So now, let's look at the theta.x as a linear function.
+
+67
+00:04:18,990 --> 00:04:21,079
+So this is a linear function.
+
+68
+00:04:21,079 --> 00:04:23,090
+Parameter vector of theta is fixed.
+
+69
+00:04:23,090 --> 00:04:24,390
+X varies.
+
+70
+00:04:24,390 --> 00:04:27,860
+So it's your linear function of x.
+
+71
+00:04:27,860 --> 00:04:30,920
+It is positive on one side of this line
+
+72
+00:04:30,920 --> 00:04:32,600
+and negative on the other side.
+
+73
+00:04:32,600 --> 00:04:38,420
+So let's just pick that this side it is positive.
+
+74
+00:04:38,420 --> 00:04:43,470
+And on this side, it is negative.
+
+75
+00:04:43,470 --> 00:04:47,200
+And it's exactly 0 along the decision boundary.
+
+76
+00:04:47,200 --> 00:04:49,710
+
+
+77
+00:04:49,710 --> 00:04:52,920
+So now we know based on this choice
+
+78
+00:04:52,920 --> 00:04:57,630
+which direction theta must be.
+
+79
+00:04:57,630 --> 00:05:00,790
+Theta must be oriented in this direction.
+
+80
+00:05:00,790 --> 00:05:03,720
+Because if you take any point here
+
+81
+00:05:03,720 --> 00:05:08,973
+for which the linear function takes a positive value,
+
+82
+00:05:08,973 --> 00:05:10,640
+and then you look at the vector of that,
+
+83
+00:05:10,640 --> 00:05:15,350
+then the inner product between that x and theta is positive.
+
+84
+00:05:15,350 --> 00:05:17,360
+And it's negative for any point here.
+
+85
+00:05:17,360 --> 00:05:21,830
+
+
+86
+00:05:21,830 --> 00:05:27,200
+So now, we have parametric way of writing the decision
+
+87
+00:05:27,200 --> 00:05:28,290
+boundaries.
+
+88
+00:05:28,290 --> 00:05:32,390
+And we know which side is a positive one
+
+89
+00:05:32,390 --> 00:05:34,550
+and which side is the negative one.
+
+90
+00:05:34,550 --> 00:05:39,890
+This now allows us to define the set of linear classifiers
+
+91
+00:05:39,890 --> 00:05:42,080
+through origin.
+
+92
+00:05:42,080 --> 00:05:45,650
+So let's make that a little bit more precise.
+
+93
+00:05:45,650 --> 00:05:47,570
+We have a classifier.
+
+94
+00:05:47,570 --> 00:05:52,190
+Now parameterized by the vector, theta.
+
+95
+00:05:52,190 --> 00:05:56,720
+So each choice of theta defines one classifier.
+
+96
+00:05:56,720 --> 00:05:59,710
+You change theta, you get a different classifier.
+
+97
+00:05:59,710 --> 00:06:01,880
+It's oriented differently.
+
+98
+00:06:01,880 --> 00:06:06,890
+But it also goes through origin.
+
+99
+00:06:06,890 --> 00:06:13,880
+So that classifier is now simply the sign of theta dot x--
+
+100
+00:06:13,880 --> 00:06:17,750
+the labels that it returns is a sign of that linear function
+
+101
+00:06:17,750 --> 00:06:20,450
+theta dot x.
+
+102
+00:06:20,450 --> 00:06:25,720
+And in general, theta lives in three-dimensional space,
+
+103
+00:06:25,720 --> 00:06:28,030
+as would x.
+
+104
+00:06:28,030 --> 00:06:34,020
+So this is now the set of linear classifiers through origin.
+
+105
+00:06:34,020 --> 00:06:38,330
+
+
+106
+00:06:38,330 --> 00:06:40,310
+So all the choices of--
+
+107
+00:06:40,310 --> 00:06:42,890
+you try all the parameter values,
+
+108
+00:06:42,890 --> 00:06:45,050
+you will look at different classifiers.
+
+109
+00:06:45,050 --> 00:06:46,850
+And all the classifiers that you can
+
+110
+00:06:46,850 --> 00:06:52,790
+get by bearing the parameter theta are linear classifiers.
+
+111
+00:06:52,790 --> 00:06:57,100
+And the whole thing is the set of linear classifiers.
+
+112
+00:06:57,100 --> 00:07:01,000
+Note that this association between the classifier
+
+113
+00:07:01,000 --> 00:07:03,940
+and the parameter vector theta is not unique.
+
+114
+00:07:03,940 --> 00:07:06,550
+There are multiple parameter vectors theta
+
+115
+00:07:06,550 --> 00:07:11,250
+that defined exactly the same classifier.
+
+116
+00:07:11,250 --> 00:07:13,530
+But each linear classifier through origin
+
+117
+00:07:13,530 --> 00:07:15,930
+has at least one--
+
+118
+00:07:15,930 --> 00:07:19,140
+in fact, many parameter vectors theta
+
+119
+00:07:19,140 --> 00:07:21,780
+that correspond to the same decision
+
+120
+00:07:21,780 --> 00:07:24,870
+boundary, same decisions.
+
+121
+00:07:24,870 --> 00:07:26,910
+So what is that degree of freedom here?
+
+122
+00:07:26,910 --> 00:07:28,740
+If you look at that linear function,
+
+123
+00:07:28,740 --> 00:07:31,980
+the classifier only cares about the sign of that.
+
+124
+00:07:31,980 --> 00:07:36,060
+So however, we multiply the value of theta here,
+
+125
+00:07:36,060 --> 00:07:40,940
+we will get the same classifier as a result.
+
+126
+00:07:40,940 --> 00:07:44,170
+So the norm of the parameter vector of theta
+
+127
+00:07:44,170 --> 00:07:49,760
+is not relevant in terms of the decision boundary.
+
+128
+00:07:49,760 --> 00:07:53,810
+But we will make use of this degree of freedom later on.
+
+129
+00:07:53,810 --> 00:07:56,700
+
+
+130
+00:07:56,700 --> 00:07:59,770
+One original point that we can understand
+
+131
+00:07:59,770 --> 00:08:06,280
+is that the theta dot x is the degree to which we classify
+
+132
+00:08:06,280 --> 00:08:09,820
+the example positively or negatively.
+
+133
+00:08:09,820 --> 00:08:15,460
+That degree only changes when we move orthogonally
+
+134
+00:08:15,460 --> 00:08:17,150
+to the decision boundary.
+
+135
+00:08:17,150 --> 00:08:22,660
+If we take two points here that are equidistant to the decision
+
+136
+00:08:22,660 --> 00:08:25,570
+boundary and are on the same side,
+
+137
+00:08:25,570 --> 00:08:31,690
+they are classified as strongly positively.
+
+138
+00:08:31,690 --> 00:08:33,700
+If their distance from the boundary changes,
+
+139
+00:08:33,700 --> 00:08:37,900
+then the degree to which they are classified on that side
+
+140
+00:08:37,900 --> 00:08:38,710
+changes as well.
+
+141
+00:08:38,710 --> 00:08:42,240
+
+
+142
+00:08:42,240 --> 00:08:48,530
+Now we can use this and define the set of linear classifiers
+
+143
+00:08:48,530 --> 00:08:51,920
+without the constraint that they have to go through origin.
+
+144
+00:08:51,920 --> 00:08:55,920
+The only difference here is that we can now move the boundary--
+
+145
+00:08:55,920 --> 00:09:00,170
+decision boundary to be anywhere, not just those
+
+146
+00:09:00,170 --> 00:09:02,390
+that go through origin.
+
+147
+00:09:02,390 --> 00:09:05,090
+Again, we have an orientation of the boundary
+
+148
+00:09:05,090 --> 00:09:08,420
+as well as the location.
+
+149
+00:09:08,420 --> 00:09:14,510
+So the decision boundary here is now written in a vector form
+
+150
+00:09:14,510 --> 00:09:16,310
+slightly differently.
+
+151
+00:09:16,310 --> 00:09:22,070
+It's all x, such that theta dot x,
+
+152
+00:09:22,070 --> 00:09:25,580
+which is now-- that inner product is a scalar.
+
+153
+00:09:25,580 --> 00:09:31,710
+We add a scalar parameter of theta 0 offset parameter.
+
+154
+00:09:31,710 --> 00:09:34,380
+And that whole thing equals zero.
+
+155
+00:09:34,380 --> 00:09:40,420
+This is now the decision boundary.
+
+156
+00:09:40,420 --> 00:09:46,350
+And it is theta 0 that controls the location
+
+157
+00:09:46,350 --> 00:09:51,950
+of the boundary, where it is in relation to origin.
+
+158
+00:09:51,950 --> 00:09:56,430
+And theta here controls the orientation of that boundary.
+
+159
+00:09:56,430 --> 00:10:02,410
+So again, theta, as a vector, is orthogonal to the decision
+
+160
+00:10:02,410 --> 00:10:04,300
+boundary here.
+
+161
+00:10:04,300 --> 00:10:12,110
+So on this side on the boundary, again, theta dot x plus theta 0
+
+162
+00:10:12,110 --> 00:10:13,780
+is positive.
+
+163
+00:10:13,780 --> 00:10:19,360
+As every time we are on the same side as where theta points,
+
+164
+00:10:19,360 --> 00:10:23,480
+than the linear function here gives as a positive value.
+
+165
+00:10:23,480 --> 00:10:26,570
+It's exactly 0 along the boundary.
+
+166
+00:10:26,570 --> 00:10:28,960
+And it's negative on the other side.
+
+167
+00:10:28,960 --> 00:10:34,060
+
+
+168
+00:10:34,060 --> 00:10:39,220
+Now, we can use this to define the set of linear classifiers
+
+169
+00:10:39,220 --> 00:10:41,320
+without the constraint that it has
+
+170
+00:10:41,320 --> 00:10:46,880
+to go through origin by defining that classifier now
+
+171
+00:10:46,880 --> 00:10:50,280
+with two parameters, parameter vector of theta
+
+172
+00:10:50,280 --> 00:10:54,130
+and that scalar theta 0 offset parameter.
+
+173
+00:10:54,130 --> 00:10:58,430
+And again, similarly saying that the label that's returned
+
+174
+00:10:58,430 --> 00:11:04,370
+is just a sign of that linear function,
+
+175
+00:11:04,370 --> 00:11:08,810
+theta dot x plus theta 0.
+
+176
+00:11:08,810 --> 00:11:12,060
+You specify the two parameters.
+
+177
+00:11:12,060 --> 00:11:16,380
+You specify the orientation of the line
+
+178
+00:11:16,380 --> 00:11:19,170
+and where it's located.
+
+179
+00:11:19,170 --> 00:11:22,200
+And we know which side is positive
+
+180
+00:11:22,200 --> 00:11:25,160
+and which side is negative.
+
+181
+00:11:25,160 --> 00:11:28,880
+So theta and theta 0 fully specify the classifier.
+
+182
+00:11:28,880 --> 00:11:30,670
+Again, the mapping is not unique.
+
+183
+00:11:30,670 --> 00:11:34,700
+There are many theta and theta 0 that define the same decision
+
+184
+00:11:34,700 --> 00:11:36,380
+boundary.
+
+185
+00:11:36,380 --> 00:11:42,830
+But its classifier has now a set of parameters that correspond
+
+186
+00:11:42,830 --> 00:11:45,310
+to the same decision boundary.
+
+187
+00:11:45,310 --> 00:11:48,490
+And this whole set of such classifiers,
+
+188
+00:11:48,490 --> 00:11:53,740
+is then obtained by varying theta as a vector in general
+
+189
+00:11:53,740 --> 00:12:00,060
+in R d and theta 0 as a scalar parameter.
+
+190
+00:12:00,060 --> 00:12:04,568
+So this is now the set of linear classifiers.
+
+191
+00:12:04,568 --> 00:12:07,200
+
+
+192
+00:12:07,200 --> 00:12:10,760
+So when we look for linear classifier,
+
+193
+00:12:10,760 --> 00:12:13,400
+we try to find parameters theta and theta
+
+194
+00:12:13,400 --> 00:12:16,360
+0 on the basis of the training set.
+
+195
+00:12:16,360 --> 00:12:20,120
+And we want to select those class parameters in such a way
+
+196
+00:12:20,120 --> 00:12:22,550
+that the classifier makes correct decisions.
+
+197
+00:12:22,550 --> 00:12:26,190
+
+
+198
+00:12:26,190 --> 00:12:29,130
+So to understand this a little bit more,
+
+199
+00:12:29,130 --> 00:12:32,450
+let's look at whether--
+
+200
+00:12:32,450 --> 00:12:36,210
+in the figure that I drew, whether the theta
+
+201
+00:12:36,210 --> 00:12:40,060
+0 scalar parameter here is positive or negative.
+
+202
+00:12:40,060 --> 00:12:43,110
+So what is that value?
+
+203
+00:12:43,110 --> 00:12:45,510
+We can just figure it out from this
+
+204
+00:12:45,510 --> 00:12:52,600
+if we take that linear function, we put origin in place of x.
+
+205
+00:12:52,600 --> 00:13:00,630
+So we have theta dot, now a zero vector, plus theta 0.
+
+206
+00:13:00,630 --> 00:13:03,810
+And we see from the figure that this origin
+
+207
+00:13:03,810 --> 00:13:05,940
+lies on the negative side.
+
+208
+00:13:05,940 --> 00:13:08,910
+So this has to be negative, which implies,
+
+209
+00:13:08,910 --> 00:13:14,520
+since this is now 0, that theta 0 itself is negative.
+
+210
+00:13:14,520 --> 00:13:20,740
+If we move this boundary in this direction past the origin,
+
+211
+00:13:20,740 --> 00:13:24,288
+theta 0 would become positive.
+
+212
+00:13:24,288 --> 00:13:27,100
+
+
+213
+00:13:27,100 --> 00:13:32,680
+That is the set of linear classifiers through origin
+
+214
+00:13:32,680 --> 00:13:37,527
+earlier and now the full set of linear classifiers.
+
+215
+00:13:37,527 --> 00:13:38,027
+
+

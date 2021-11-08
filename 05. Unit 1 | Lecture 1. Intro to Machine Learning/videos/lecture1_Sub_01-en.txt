@@ -1,0 +1,78 @@
+
+Hello, this is machine learning lecture number one.
+Machine learning it's already everywhere.
+So it is a topic that you should know something about.
+For example, if you type in a search query on the web,
+how that query is interpreted, how the websites that you're
+looking for are interpreted, and how the match between the two
+is made, all of this is run by machine learning algorithms.
+If you look at movie recommendations provided
+to you, they are provided to you by machine learning algorithms
+exploiting your previous experience with the site.
+Going a step further, automated systems
+like Amazon Alexa, the Google Assistant, or Siri,
+they all run on top of machine learning algorithms.
+Machine learning is used to interpret speeds
+to natural languages, how the natural language
+itself is interpreted, how its mapped to content that you're
+looking for, or the commands that you
+are interested in executing.
+Machine learning is regularly used for image analysis.
+For example, in a self-driving vehicle,
+the unfolding scene coming from camera input
+is interpreted by machine learning algorithms.
+Machine learning has also achieved
+several benchmark tests, for example,
+surpassing human level performance in game playing,
+such as game of Go recently.
+Machine learning is being adopted
+by different disciplines, for example biology, chemistry,
+physics, and so on.
+So it is everywhere.
+And we need to understand what it is
+and how to make use of it.
+
+So let's start by defining exactly
+what machine learning is.
+As a discipline, it aims to design, understand, and apply
+computer programs that really learn from experience, OK?
+There are many ways to learn or many reasons to learn.
+You can try to model, understand how things work.
+You can try to predict about, say, future outcomes
+or try to control towards a desired output configuration.
+We will start by focusing on prediction as a core machine
+learning task.
+So let's take a few examples to understand what this actually
+is.
+You can make predictions about future events.
+So for example, you may have a market value of a stock
+measured as a function of time.
+And you see some historical behavior of that stock.
+And you wish to predict what happens next day.
+In a similar vein, in a self-driving vehicle,
+you can try to predict whether a collision is about to happen.
+In a medical context, you might predict
+the risk of acquiring or getting a recurrence for a disease
+and so on.
+There are many problems that machine learning algorithms
+can help you to predict about future events.
+
+Now, there are other types of predictions that you can make,
+not only about events that are about to occur
+but about properties you do not yet know.
+For example, I can take a movie and ask whether you
+would like this movie.
+That is a prediction of a property
+of a movie, whether you like it or not,
+that I can learn to predict.
+I can ask about molecules, whether a molecule here
+is soluble in water or another substance.
+It is a property that I can learn to predict.
+I can learn to predict properties about images.
+What is the content in the image, a category that
+should be associated with the image,
+that it's about mushrooms?
+In a more structured way, I can also turn machine translation
+into this form.
+I can take a sentence in English and ask,
+what is the corresponding sentence in Spanish?

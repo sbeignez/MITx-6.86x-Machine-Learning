@@ -1,0 +1,124 @@
+0
+00:00:00,000 --> 00:00:00,890
+
+
+1
+00:00:00,890 --> 00:00:03,880
+So in this course, you will see two types of lectures.
+
+2
+00:00:03,880 --> 00:00:07,870
+Tablet lectures where you will see me writing on the tablet
+
+3
+00:00:07,870 --> 00:00:11,500
+and hear my voice but not actually see my face.
+
+4
+00:00:11,500 --> 00:00:15,490
+You will also see live blackboard lectures
+
+5
+00:00:15,490 --> 00:00:17,260
+given by Professor Barzilay.
+
+6
+00:00:17,260 --> 00:00:21,670
+And we will alternate different topics given by me
+
+7
+00:00:21,670 --> 00:00:24,540
+and given by Professor Barzilay.
+
+8
+00:00:24,540 --> 00:00:28,110
+Now, this course has five units.
+
+9
+00:00:28,110 --> 00:00:32,430
+Unit number 1 focuses on very basic building block
+
+10
+00:00:32,430 --> 00:00:37,030
+of machine learning methods called linear classification.
+
+11
+00:00:37,030 --> 00:00:40,440
+And you will learn a very basic algorithm
+
+12
+00:00:40,440 --> 00:00:44,140
+for solving that problem that will carry on later on.
+
+13
+00:00:44,140 --> 00:00:47,040
+And you can use it to solve much more complicated problems
+
+14
+00:00:47,040 --> 00:00:48,610
+as well.
+
+15
+00:00:48,610 --> 00:00:51,840
+Now, as an illustration then to understand
+
+16
+00:00:51,840 --> 00:00:55,450
+how these methods actually apply in practice,
+
+17
+00:00:55,450 --> 00:01:00,330
+you will also be solving a project.
+
+18
+00:01:00,330 --> 00:01:05,700
+This is like a mini application, going through motions
+
+19
+00:01:05,700 --> 00:01:08,640
+that you would have to do if you actually solved
+
+20
+00:01:08,640 --> 00:01:11,320
+a real application problem.
+
+21
+00:01:11,320 --> 00:01:16,110
+So the application in this case is predicting whether an Amazon
+
+22
+00:01:16,110 --> 00:01:19,420
+product review, looking at only the text,
+
+23
+00:01:19,420 --> 00:01:22,630
+whether the review is positive or negative.
+
+24
+00:01:22,630 --> 00:01:24,750
+Now, we expect that there is a little bit
+
+25
+00:01:24,750 --> 00:01:28,110
+of a gap between what we have taught you
+
+26
+00:01:28,110 --> 00:01:32,800
+and what is precisely required to solve this project.
+
+27
+00:01:32,800 --> 00:01:37,800
+So we expect you to think through and try to figure out
+
+28
+00:01:37,800 --> 00:01:40,740
+what type of features to use, to feed
+
+29
+00:01:40,740 --> 00:01:44,674
+in to the linear classifier, and so on.
+
+30
+00:01:44,674 --> 00:01:45,174
+
+

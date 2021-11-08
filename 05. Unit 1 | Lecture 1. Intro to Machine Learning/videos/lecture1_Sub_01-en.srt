@@ -1,0 +1,312 @@
+0
+00:00:00,000 --> 00:00:01,400
+
+
+1
+00:00:01,400 --> 00:00:06,340
+Hello, this is machine learning lecture number one.
+
+2
+00:00:06,340 --> 00:00:08,350
+Machine learning it's already everywhere.
+
+3
+00:00:08,350 --> 00:00:12,430
+So it is a topic that you should know something about.
+
+4
+00:00:12,430 --> 00:00:17,920
+For example, if you type in a search query on the web,
+
+5
+00:00:17,920 --> 00:00:20,830
+how that query is interpreted, how the websites that you're
+
+6
+00:00:20,830 --> 00:00:23,790
+looking for are interpreted, and how the match between the two
+
+7
+00:00:23,790 --> 00:00:29,700
+is made, all of this is run by machine learning algorithms.
+
+8
+00:00:29,700 --> 00:00:32,070
+If you look at movie recommendations provided
+
+9
+00:00:32,070 --> 00:00:37,490
+to you, they are provided to you by machine learning algorithms
+
+10
+00:00:37,490 --> 00:00:41,320
+exploiting your previous experience with the site.
+
+11
+00:00:41,320 --> 00:00:43,960
+Going a step further, automated systems
+
+12
+00:00:43,960 --> 00:00:48,550
+like Amazon Alexa, the Google Assistant, or Siri,
+
+13
+00:00:48,550 --> 00:00:53,300
+they all run on top of machine learning algorithms.
+
+14
+00:00:53,300 --> 00:00:56,590
+Machine learning is used to interpret speeds
+
+15
+00:00:56,590 --> 00:00:59,740
+to natural languages, how the natural language
+
+16
+00:00:59,740 --> 00:01:03,760
+itself is interpreted, how its mapped to content that you're
+
+17
+00:01:03,760 --> 00:01:05,720
+looking for, or the commands that you
+
+18
+00:01:05,720 --> 00:01:10,080
+are interested in executing.
+
+19
+00:01:10,080 --> 00:01:13,990
+Machine learning is regularly used for image analysis.
+
+20
+00:01:13,990 --> 00:01:16,630
+For example, in a self-driving vehicle,
+
+21
+00:01:16,630 --> 00:01:21,010
+the unfolding scene coming from camera input
+
+22
+00:01:21,010 --> 00:01:25,870
+is interpreted by machine learning algorithms.
+
+23
+00:01:25,870 --> 00:01:29,310
+Machine learning has also achieved
+
+24
+00:01:29,310 --> 00:01:33,330
+several benchmark tests, for example,
+
+25
+00:01:33,330 --> 00:01:37,240
+surpassing human level performance in game playing,
+
+26
+00:01:37,240 --> 00:01:40,080
+such as game of Go recently.
+
+27
+00:01:40,080 --> 00:01:41,850
+Machine learning is being adopted
+
+28
+00:01:41,850 --> 00:01:47,860
+by different disciplines, for example biology, chemistry,
+
+29
+00:01:47,860 --> 00:01:49,780
+physics, and so on.
+
+30
+00:01:49,780 --> 00:01:50,940
+So it is everywhere.
+
+31
+00:01:50,940 --> 00:01:53,060
+And we need to understand what it is
+
+32
+00:01:53,060 --> 00:01:54,300
+and how to make use of it.
+
+33
+00:01:54,300 --> 00:01:56,950
+
+
+34
+00:01:56,950 --> 00:01:59,400
+So let's start by defining exactly
+
+35
+00:01:59,400 --> 00:02:01,380
+what machine learning is.
+
+36
+00:02:01,380 --> 00:02:05,430
+As a discipline, it aims to design, understand, and apply
+
+37
+00:02:05,430 --> 00:02:11,340
+computer programs that really learn from experience, OK?
+
+38
+00:02:11,340 --> 00:02:16,590
+There are many ways to learn or many reasons to learn.
+
+39
+00:02:16,590 --> 00:02:20,310
+You can try to model, understand how things work.
+
+40
+00:02:20,310 --> 00:02:24,630
+You can try to predict about, say, future outcomes
+
+41
+00:02:24,630 --> 00:02:31,020
+or try to control towards a desired output configuration.
+
+42
+00:02:31,020 --> 00:02:36,330
+We will start by focusing on prediction as a core machine
+
+43
+00:02:36,330 --> 00:02:38,620
+learning task.
+
+44
+00:02:38,620 --> 00:02:42,570
+So let's take a few examples to understand what this actually
+
+45
+00:02:42,570 --> 00:02:45,310
+is.
+
+46
+00:02:45,310 --> 00:02:47,870
+You can make predictions about future events.
+
+47
+00:02:47,870 --> 00:02:51,910
+So for example, you may have a market value of a stock
+
+48
+00:02:51,910 --> 00:02:55,400
+measured as a function of time.
+
+49
+00:02:55,400 --> 00:03:02,420
+And you see some historical behavior of that stock.
+
+50
+00:03:02,420 --> 00:03:06,750
+And you wish to predict what happens next day.
+
+51
+00:03:06,750 --> 00:03:11,910
+In a similar vein, in a self-driving vehicle,
+
+52
+00:03:11,910 --> 00:03:16,700
+you can try to predict whether a collision is about to happen.
+
+53
+00:03:16,700 --> 00:03:19,290
+In a medical context, you might predict
+
+54
+00:03:19,290 --> 00:03:25,640
+the risk of acquiring or getting a recurrence for a disease
+
+55
+00:03:25,640 --> 00:03:26,700
+and so on.
+
+56
+00:03:26,700 --> 00:03:29,460
+There are many problems that machine learning algorithms
+
+57
+00:03:29,460 --> 00:03:32,580
+can help you to predict about future events.
+
+58
+00:03:32,580 --> 00:03:35,550
+
+
+59
+00:03:35,550 --> 00:03:38,610
+Now, there are other types of predictions that you can make,
+
+60
+00:03:38,610 --> 00:03:42,210
+not only about events that are about to occur
+
+61
+00:03:42,210 --> 00:03:45,570
+but about properties you do not yet know.
+
+62
+00:03:45,570 --> 00:03:48,870
+For example, I can take a movie and ask whether you
+
+63
+00:03:48,870 --> 00:03:50,640
+would like this movie.
+
+64
+00:03:50,640 --> 00:03:52,560
+That is a prediction of a property
+
+65
+00:03:52,560 --> 00:03:55,620
+of a movie, whether you like it or not,
+
+66
+00:03:55,620 --> 00:03:59,000
+that I can learn to predict.
+
+67
+00:03:59,000 --> 00:04:02,660
+I can ask about molecules, whether a molecule here
+
+68
+00:04:02,660 --> 00:04:06,300
+is soluble in water or another substance.
+
+69
+00:04:06,300 --> 00:04:10,500
+It is a property that I can learn to predict.
+
+70
+00:04:10,500 --> 00:04:15,460
+I can learn to predict properties about images.
+
+71
+00:04:15,460 --> 00:04:19,260
+What is the content in the image, a category that
+
+72
+00:04:19,260 --> 00:04:20,910
+should be associated with the image,
+
+73
+00:04:20,910 --> 00:04:24,510
+that it's about mushrooms?
+
+74
+00:04:24,510 --> 00:04:29,400
+In a more structured way, I can also turn machine translation
+
+75
+00:04:29,400 --> 00:04:30,420
+into this form.
+
+76
+00:04:30,420 --> 00:04:34,560
+I can take a sentence in English and ask,
+
+77
+00:04:34,560 --> 00:04:38,000
+what is the corresponding sentence in Spanish?
+

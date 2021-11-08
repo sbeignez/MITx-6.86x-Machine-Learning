@@ -1,7 +1,7 @@
-Unit 1. Lecture 2.
+# Unit 1. Lecture 2.
 
 
-# 1. Objectives
+## 2.1. Objectives
 
 Linear Classifiers and Perceptron Algorithm
 
@@ -15,7 +15,7 @@ Linear Classifiers and Perceptron Algorithm
 * understand the intuitive and formal definition of **linear separation**
 * use the **perceptron algorithm** with and without offset
 
-# 2. Review of Basic Concepts
+## 2.2. Review of Basic Concepts
 
 * Feature vectors, labels
   * dimension of the vector = number of features
@@ -31,7 +31,7 @@ Linear Classifiers and Perceptron Algorithm
   * a very simple online mistake driven algorithm that
 
 
-# 3. Linear Classifiers Mathematically Revisited
+## 2.3. Linear Classifiers Mathematically Revisited
 
 Linear classifier
 Decision boundary (hyper-plane)
@@ -67,22 +67,25 @@ $
 \begin{bmatrix} x_1 \\ .. \\ x_n \end{bmatrix} \cdot \begin{bmatrix} y_1 \\ .. \\ y_n \end{bmatrix} = x^Ty = \sum_{i=1}^n x_i y_i 
 $
 
-# 4. Linear Separation
+## 2.4. Linear Separation
 
 For some cases, it's impossible to find a classifier that perfectly classify all the trainings points.
 
 > **Linearly separarable**  
-> A traning example set $S_n$ is linearly separable, if there exist a parameter vector $\theta$ and offset parameter $\theta_o$.. such as ... >0 for all i = 1,..,n
+> A traning example set $S_n$ is linearly separable,
+> * if it exists a linear classifier that correctly classifies all the training examples.
+> * i.e. if it exists a parameter vector $\hat\theta$ and offset parameter $\hat\theta_0$, such that $y^{(i)} ( \hat\theta \cdot x^{(i)} + \hat\theta_0) >0$, for all $i = 1,..,n$
 
 
 By definition: The linear classifier $h : X \mapsto \{ -1,0,1\}$, 
 
-But conventionally, 0 is not a possible label
+But conventionally, 0 is not a possible label. 0 is counted as an error.
 
-$ y^{(i)} ( \theta \cdot x^{(i)}) > 0 $ when $y^{(i)}$ and $( \theta \cdot x^{(i)})$ are of the same sign 
+$ y^{(i)} ( \theta \cdot x^{(i)}) > 0 $ when $y^{(i)}$ and $( \theta \cdot x^{(i)})$ are of the same sign  
+  
 
-
-# 5. The Perceptron Algorithm
+  
+## 2.5. The Perceptron Algorithm
 
 Training error for linear classifier
 
@@ -92,20 +95,23 @@ $ E_n(\theta,\theta_o) = 1/n * \sum_{i=1}^n( h(x^{(i)}) <> y^{(i)}) ..$
 
 sum of mis-classified points
 
-## Perceptron through orgin
+### Perceptron through orgin
 
-* Start with $ \theta = 0 $
-* For $ i = [1,T] $
-* For $ i = [1,n] $
+* Initialize with $ \theta = 0 $
+* Loop T times: For $ i = [1,T] $ 
+  * For each data point: For $ i = [1,n] $ 
+    * If: $ y^{(i)}(\theta \cdot x^{(i)}) \le 0 $
+    * then update: $\theta^{(i)} = \theta^{(i-1)} + y^{(i)}x^{(i)} $ 
 
-$ if: \ y^{(i)}(\theta \cdot x^{(i)}) <= 0 \\
-then: \theta = \theta + y^{(i)}x^{(i)}
-$ 
+Notes:
+* (T is the number of epoch)  
+* (n is the size of the training set)
+* Epoch: the number of complete passes through the training dataset.
+* Batch: number of training samples to work through before the model’s internal parameters are updated.
+* Both are Hyperparameter of the gradient descent algo.
 
-## Perceptron with offset
+### Perceptron with offset  
 
-
-$ if: \ y^{(i)}(\theta \cdot x^{(i)} + \theta_0) <= 0 \\  
-then: \theta = \theta + y^{(i)}x^{(i)} \\
-\theta_0 = \theta_0 + y^{(i)}
-$ 
+* if: $ y^{(i)}(\theta \cdot x^{(i)} + \theta_0) \le 0 $ 
+* then: $\theta = \theta + y^{(i)}x^{(i)} $
+* and $\theta_0 = \theta_0 + y^{(i)}$

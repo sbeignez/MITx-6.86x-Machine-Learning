@@ -1,6 +1,6 @@
-Unit 1. Lecture 3. Hinge loss, Margin boundaries and Regularization
+# Unit 1. Lecture 3. Hinge loss, Margin boundaries and Regularization
 
-# 1. Objective
+## 3.1. Objective
 
 Hinge loss, Margin boundaries, and Regularization
 
@@ -8,7 +8,7 @@ Hinge loss, Margin boundaries, and Regularization
 * pose linear classification as an optimization problem
 * understand hinge loss, margin boundaries and regularization
 
-# 2. Introduction
+## 3.2. Introduction
 
 Large margin classifier
 
@@ -21,12 +21,13 @@ Loss
 Objective function = min (loss + )
 
 
-# 3. Margin Boundary
+## 3.3. Margin Boundary
 
-Decision boundary
+### Decision boundary
+
 > The decision boundary is the set of points  which satisfy $ \theta \cdot x + \theta_0 = 0 $
 
-Margin boudnary  
+### Margin boundary  
 > The Margin Boundary is the set of points  which satisfy $ \theta \cdot x + \theta_o = +1\ or -1 $
 
 +1 on the side teh vector points, -1 on the other side.
@@ -44,9 +45,16 @@ For all points, correctly classfied, on the margin boundary: $ y_i*(\theta \cdot
 
 As $ ||\theta|| $ increase,  $ 1 \over ||\theta||$ decrease and the distance from the decision boundaries to the margins boundaries decrease too.
 
-# 4. Hinge Loss and Objective function
+Illustration: #TODO  
+Large theta, small theta
 
-## Loss function
+
+
+
+
+## 4. Hinge Loss and Objective function
+
+### Loss function
 
 Loss function
 
@@ -71,15 +79,15 @@ Type of loss functions
   * etc..
 
 
-## Hinge Loss function
+### Hinge Loss function
 
 $ L = max(0,1-y*f(x))$
 
 
-## Regularization
+### Regularization
 
 
-## Objective function
+### Objective function
 
 > Objective function = average loss + regularization
 

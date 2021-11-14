@@ -33,3 +33,9 @@ https://github.com/Shawn-xyg/MITx-6.86x-Machine-Learning-with-Python
 ## Standard notation
 https://learning.edx.org/course/course-v1:MITx+6.86x+3T2021/block-v1:MITx+6.86x+3T2021+type@sequential+block@u0s4_mechanics/block-v1:MITx+6.86x+3T2021+type@vertical+block@u0s4_mechanics-tab3  
 How standard?
+
+
+## Books
+
+https://ai.stanford.edu/~nilsson/MLBOOK.pdf
+https://web.stanford.edu/~hastie/Papers/ESLII.pdf

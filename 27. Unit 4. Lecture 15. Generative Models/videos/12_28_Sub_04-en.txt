@@ -1,0 +1,124 @@
+
+So now we have our parameters.
+We have ways to compute the likelihood of the documents
+based on these parameters.
+And the question is, how can we utilize
+our training data to find the best parameters, correct?
+So again, we are coming back to supervised scenario
+that you've seen in the case of classifiers.
+We will provide our model with, let's say,
+positive or negative examples, and the model
+needs to find the best parameters that fit the data.
+And here we are going to go back to our favorite principles
+of maximum likelihood, and we will make the assumption--
+
+this is our assumption, that the best parameters
+are the parameters which give the highest
+likelihood to our data.
+So you have the training data and you're
+trying to find parameters for which
+the probability of these training data
+will be the highest.
+So in other words, what we are trying to do
+we would say we want to find these thetas which
+maximize this expression.
+And again, assume that this is your training document
+D, over all the thetas.
+That's what you're trying to do.
+And here I can rewrite it again and say max over thetas.
+Using our previous notations, we can write probability w.
+
+So it turns out-- and you will see it both in the lecture
+and in the exercises-- that it's easier
+for us to this maximization to find the best thetas.
+And instead of working with this expression directly,
+we would actually maximize the log, and we can do it.
+Correct?
+So what we will need to do is to take
+the log of this expression.
+So let's write it down.
+Log-- and we can just do the usual thing.
+You remember that log of the products
+is actually sum of logs.
+So we can do sum w.
+And then we're taking the log of these expressions,
+so we can write it as count w log theta w.
+So now we are trying to find thetas
+that are going to maximize the value of this expression.
+What I will do now, I will stick to the example
+that I had before where I really looked
+at the vocabulary of only two symbols.
+We will first solve this for the case
+where the alphabet has just two symbols,
+and then discussed how we can solve it
+for general vocabulary.
+And I know that we all love cats and dogs,
+but for me it will be easier to write where w will just
+have two words, exactly like in the example above,
+but this time I'm going to be using just--
+instead of writing cats and dogs,
+I will just say the first word is 0
+and another one is 1, just because it's shorter
+to write it.
+OK?
+So in this particular case, what's
+so special above this case?
+Because in this case, we actually just need it
+to have a single theta.
+So we can write that theta 0--
+we need a theta for zero.
+Correct?
+The likelihood of generating the word zero.
+If we want to know the theta 1, we can just
+do 1 and subtract this value.
+So we can write theta 0 would be just my theta,
+and theta 1 would be 1 minus theta.
+So I would just have one parameter,
+and then I'm going to rewrite this formula
+with the single parameter.
+So instead, again, we're assigning our vocabulary just
+have two words.
+So the first part would correspond to 0.
+So we are going to write count zero multiply by log theta.
+And this would be the parameter associated
+with generating the word zero.
+Plus count 1 multiplied by a log of 1 1 minus theta.
+
+Again, in our older vocabulary, this
+would correspond to theta 0, and this corresponds to theta 1.
+So my next step is actually to find
+derivative of this expression with respect to theta.
+So we are going on take the derivative
+with respect to theta.
+
+And what we will get in this case
+would be count of the words 0 divided by theta
+plus count of 1 divided--
+and I should say 1 minus and 1 minus theta.
+So we can just write minus 1 minus theta.
+So this is our new expression, and we
+need to make it equal to 0 to find our desired thetas.
+So in this case, we can just do this computation.
+1 minus theta count 0 minus theta count 1 equals 0.
+So if you go and do the algebra, which is pretty straightforward
+in this case-- you can open parens and close parens--
+what you would get here is at the theta
+that we are looking for--
+and you see I use this estimate theta, special notation--
+would be actually equal to something
+that sounds like very logical.
+It's going to be equal count 0 divided
+by count 1 plus count 0.
+This is kind of an obvious thing, so it looks weird.
+You say, OK, I have a document which
+have 20 zeros and 10 ones.
+So what is the likelihood of observing 0 here?
+Would be 20 divided by 30, and that's
+exactly what this formula says.
+But what we've demonstrated here is
+that, by properly defined our maximum likelihood criteria
+and making the estimation, we're actually
+get getting the parameters that we are expected to get.
+And in some cases, for some model,
+you can kind of intuitively say what they should look like.
+In other cases not, but this mechanism always works.

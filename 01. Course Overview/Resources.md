@@ -39,3 +39,8 @@ How standard?
 
 https://ai.stanford.edu/~nilsson/MLBOOK.pdf
 https://web.stanford.edu/~hastie/Papers/ESLII.pdf
+
+
+## Preactices
+
+Implement the K-means algo (for dim=2) and visualization, with option of different distances (L_1, L_2), go step by step, ..

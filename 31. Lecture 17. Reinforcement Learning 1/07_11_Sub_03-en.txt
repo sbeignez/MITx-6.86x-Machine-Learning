@@ -1,0 +1,131 @@
+
+OK, so now we define the basic language of our discussion.
+And then the next question is how can we think about rewards?
+Because what I told you, that ideally,
+when I'm thinking about reward, there is this final reward.
+But in many problems, you actually
+want to give some kind of reward in the middle.
+For instance, you may give some living reward
+where you need to pay some price for making a move so you don't
+go endlessly round and round, or as in the case of marketing,
+a certain action cost you differently.
+So you want it all to be encapsulated in rewards.
+So typically in reinforcement learning
+we're discussing about kind of the strategy of how
+to aggregate rewards using the language of utility functions--
+utility functions.
+So what would be the utility function?
+So one option for utility function is to say,
+let's just go collect all the rewards, sum them up,
+and that's it.
+And the problem with this approach, that in this case,
+our agent can actually collect an infinite number of rewards.
+And if it is infinite, and you have two different strategies,
+it is no way for you to compare between the two.
+So ideally, we would want our utility function
+to be bounded in some way.
+And maybe the most obvious way to bound them
+that we can think about is what's called final horizon.
+So that idea of final horizon is very intuitive,
+that you can only collect the reward
+for some number of steps, like say 10,
+or whatever number you decide.
+And whatever happens afterwards doesn't count.
+So in this case, this is our U for the Utility function.
+And it's defined over a sequence of states from s or 0
+to s n plus k.
+
+And we would assume that for any value of k
+we're just collecting the reward for n steps, OK?
+So it's like you have a final number of chances
+to collect your reward.
+And what do you do afterwards, it doesn't count.
+Now, there are multiple problems with this definition
+even though it kind of sounds intuitive.
+So one of them is that actually, your behavior becomes
+in some way non-stationary.
+You're not the only depending on which state you are located.
+It actually depends on the time point where you arrived there.
+So if you arrive to this state, and you just
+have one step to go, you may decide
+to take a very different step versus if you have
+many, many steps to go and you can
+do a lot of different things.
+So for instance, if you just go one step to go,
+you may go to extremely risky behavior
+because you have no other chances.
+And what I want to say, that the reason,
+actually, we call this Markov decision processes
+by the name, not Markov, like similar to Markov
+hidden models, but we actually want
+to have all our representation to be encapsulated in a way
+that our behavior only depends on the current state.
+So the outcome of certain action would only
+depend from the state where it started and not from the time.
+Any time when I arrived to this state,
+there will be the best action for me to take.
+And if we will adapt this time of utility function,
+it would disable us to do it because we are not only
+depending on the state, but we will depend also
+and the time point to which we arrive to the state.
+So we will not be using this definition.
+Instead, we would use something else,
+which is called discounted rewards, discounted, discounted
+rewards.
+So the idea here is that I still want to have my reward,
+my utility function to be bounded,
+even if the agent can go to an infinite number of state.
+So the way we will achieve it, we will kind of
+make our engine behave to some extent like us, meaning
+very greedy.
+We would say that we really value the reward
+that we are getting now.
+But we value less the reward that we may or may not
+get tomorrow and even less reward that we may or may not
+get in two days.
+So we can think about it.
+When you have an option to watch a movie that you really
+like or prepare for a class, which will eventually bring you
+a good grade, many people-- maybe not you-- but many people
+would prefer to watch a movie.
+So that's exactly what we will make our algorithm do.
+So when we are looking at the current horizon.
+we are going to get some reward immediate reward in state as 0.
+Whenever we are thinking about reward
+that we are going to get, in the next step,
+we will just wait by gamma, where gamma
+is some value from 0 to 1.
+So in this case, it's going to be gamma multiplied
+by the reward in s1.
+And then we will have gamma squared for the next one,
+and so on and so forth.
+So what's the interesting about it,
+in addition to the fact that it emulates the behavior of some
+of us, is the fact that it's actually a bounded reward.
+So the next step for us is to look at this expression.
+I'm just going to fold it as a sum
+so that you can close and see where we're going with it.
+So here, we are going for t from 1
+to infinity, gamma t, and reward in state t, OK?
+So here, nothing happened.
+We just wrote it in a different form.
+And now things will start happening.
+So the first things that I will do, you remember--
+I'm trying to get a bound here--
+I'm going to substitute all these rewards
+with the maximal reward.
+So now, we're not using equal.
+We are already bounding.
+And if I substituted all of them with the same maximum reward,
+they can just take it outside of the equation.
+So it's max.
+And here, we have a geometric series of gamma t.
+And what we know, this expression
+is actually equal to 1 divided by 1 minus gamma.
+So what we will get here is our max divided by 1 minus gamma.
+And this is a bound.
+And what you will see is that actually,
+the fact that we're using the discount and rewards
+would be essential for us to make our algorithms converge.
+So this is a discounted reward that we
+will be using for the duration.

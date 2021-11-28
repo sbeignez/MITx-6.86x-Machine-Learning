@@ -24,9 +24,11 @@ https://www.deeplearningbook.org
 
 
 ## Github 
-DNACKAT: https://github.com/dnackat/mitx-6.86x-machine-learning
-https://github.com/sylvaticus/MITx_6.86x/
 
+COURSE NOTE:
+* https://github.com/sylvaticus/MITx_6.86x/
+
+DNACKAT: https://github.com/dnackat/mitx-6.86x-machine-learning
 https://github.com/Shawn-xyg/MITx-6.86x-Machine-Learning-with-Python
 
 

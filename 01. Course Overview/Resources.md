@@ -10,6 +10,15 @@ Tensor Flow / [Curriculum](https://www.tensorflow.org/resources/learn-ml#curricu
 
 https://www.deeplearningbook.org
 
+STANFORD
+* CS221: AI
+* CS230: Deep Learning
+* CS234: RL
+    * https://stanford-cs221.github.io/autumn2019/#schedule
+* CS224U: Natural Language Understanding 
+* CS224N: NLP with Deep Learning
+
+
 ## Course notes:
 
 * https://drive.google.com/drive/folders/1wNjvqrpwAu6ORMfUAT60Wev1nXEX6inF
